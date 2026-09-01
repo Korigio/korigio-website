@@ -33,4 +33,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Accounts and contact messages are stored in `data/` on disk (gitignored). Set `SESSION_SECRET` in production.
 
-Downloads read `https://api.github.com/repos/M-WRI/servioo/releases/latest`. Override with `GITHUB_RELEASES_REPO`.
+Downloads read `https://api.github.com/repos/Korigio/korigio-downloads/releases/latest`. Override with `GITHUB_RELEASES_REPO`.
