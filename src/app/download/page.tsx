@@ -1,24 +1,42 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { DownloadCards } from "@/components/download/DownloadCards";
+import { Requirements } from "@/components/download/Requirements";
 import { getDictionary, getLocale } from "@/lib/i18n";
-import { getLatestRelease, type ReleaseAsset } from "@/lib/releases";
+import { getVisitorDesktopOs } from "@/lib/visitor-os";
+import { getLatestRelease } from "@/lib/releases";
 
 export const metadata: Metadata = { title: "Download" };
 
 export default async function DownloadPage() {
   const dict = getDictionary(await getLocale());
-  const release = await getLatestRelease();
+  const [release, detected] = await Promise.all([
+    getLatestRelease(),
+    getVisitorDesktopOs(),
+  ]);
   const status = release.version
     ? dict.download.statusReady.replace("{version}", release.version)
     : dict.download.statusEmpty;
 
-  const cards: Array<{
-    os: string;
-    hint: string;
-    asset: ReleaseAsset | null;
-  }> = [
-    { os: dict.download.windows, hint: dict.download.windowsHint, asset: release.windows },
-    { os: dict.download.macos, hint: dict.download.macosHint, asset: release.macos },
-    { os: dict.download.linux, hint: dict.download.linuxHint, asset: release.linux },
+  const cards = [
+    {
+      id: "windows" as const,
+      title: dict.download.windows,
+      hint: dict.download.windowsHint,
+      asset: release.windows,
+    },
+    {
+      id: "macos" as const,
+      title: dict.download.macos,
+      hint: dict.download.macosHint,
+      asset: release.macos,
+    },
+    {
+      id: "linux" as const,
+      title: dict.download.linux,
+      hint: dict.download.linuxHint,
+      asset: release.linux,
+    },
   ];
 
   return (
@@ -35,33 +53,16 @@ export default async function DownloadPage() {
           v{release.version}
         </p>
       ) : null}
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
-        {cards.map((card) => (
-          <article
-            key={card.os}
-            className={`rounded-[28px] border border-white/8 bg-white/3 p-6 ${
-              card.asset ? "" : "opacity-55"
-            }`}
-          >
-            <h2 className="text-xl text-white">{card.os}</h2>
-            <p className="mt-1 text-sm text-zinc-500">
-              {card.asset ? card.asset.name : card.hint}
-            </p>
-            {card.asset ? (
-              <a
-                href={card.asset.url}
-                className="mt-6 inline-flex rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-zinc-200"
-              >
-                {dict.download.cta}
-              </a>
-            ) : (
-              <p className="mt-6 text-sm text-zinc-500">{dict.download.pending}</p>
-            )}
-          </article>
-        ))}
-      </div>
-      <p className="mt-8 max-w-2xl text-sm text-zinc-500">{status}</p>
+      <DownloadCards cards={cards} detected={detected} dict={dict} />
+      <p className="mt-8 max-w-2xl text-sm text-amber-100/70">
+        {dict.download.windowsCallout}{" "}
+        <Link href="/install#windows" className="text-amber-50 underline-offset-4 hover:underline">
+          {dict.download.guide}
+        </Link>
+      </p>
+      <p className="mt-4 max-w-2xl text-sm text-zinc-500">{status}</p>
       <p className="mt-4 max-w-2xl text-sm text-zinc-500">{dict.download.freeNote}</p>
+      <Requirements dict={dict} detected={detected} />
     </div>
   );
 }

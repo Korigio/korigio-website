@@ -28,6 +28,7 @@ export function FeedbackForm({ dict }: Props) {
         name: data.get("name"),
         email: data.get("email"),
         message: data.get("message"),
+        website: data.get("website"),
       }),
     });
     if (!response.ok) {
@@ -39,7 +40,7 @@ export function FeedbackForm({ dict }: Props) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
+    <form onSubmit={onSubmit} className="relative space-y-4">
       <label className="block text-sm text-zinc-400">
         {copy.typeLabel}
         <select required name="type" defaultValue="question" className={fieldClass}>
@@ -50,19 +51,23 @@ export function FeedbackForm({ dict }: Props) {
           ))}
         </select>
       </label>
+      <div hidden aria-hidden="true">
+        <input tabIndex={-1} autoComplete="off" name="website" />
+      </div>
       <label className="block text-sm text-zinc-400">
         {copy.name}
-        <input required name="name" className={fieldClass} />
+        <input required name="name" maxLength={200} className={fieldClass} />
       </label>
       <label className="block text-sm text-zinc-400">
         {copy.email}
-        <input required type="email" name="email" className={fieldClass} />
+        <input required type="email" name="email" maxLength={254} className={fieldClass} />
       </label>
       <label className="block text-sm text-zinc-400">
         {copy.message}
         <textarea
           required
           name="message"
+          maxLength={8000}
           rows={5}
           placeholder={copy.messagePlaceholder}
           className={fieldClass}

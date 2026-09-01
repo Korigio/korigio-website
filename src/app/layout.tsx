@@ -26,7 +26,13 @@ export const metadata: Metadata = {
   description:
     "Korigio is an offline-first desktop app for repair shops: customers, devices, repairs, diagnosis, print, and local Wi-Fi team sync. No cloud required.",
   authors: [{ name: "Moritz Alexander Wright" }],
-  icons: { icon: "/brand/mark.png" },
+  icons: {
+    icon: [
+      { url: "/brand/mark.png", type: "image/png", sizes: "1024x1024" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/brand/mark.png",
+  },
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

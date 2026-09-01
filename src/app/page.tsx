@@ -1,9 +1,12 @@
-import Link from "next/link";
 import { AppPreview } from "@/components/home/AppPreview";
+import { HomeOfflineCta, HomePlatformCtas } from "@/components/home/HomePlatformCtas";
 import { getDictionary, getLocale } from "@/lib/i18n";
+import { getVisitorDesktopOs } from "@/lib/visitor-os";
 
 export default async function HomePage() {
-  const dict = getDictionary(await getLocale());
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
+  const detected = await getVisitorDesktopOs();
 
   return (
     <>
@@ -19,27 +22,9 @@ export default async function HomePage() {
             <p className="mt-5 max-w-lg text-base leading-7 text-zinc-400 sm:text-lg">
               {dict.hero.subtitle}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/download"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-zinc-200"
-              >
-                {dict.hero.primary}
-              </Link>
-              <Link
-                href="/features"
-                className="rounded-full border border-white/12 px-5 py-2.5 text-sm text-zinc-200 hover:bg-white/6"
-              >
-                {dict.hero.secondary}
-              </Link>
-            </div>
-            <p className="mt-5 text-sm text-zinc-500">
-              {dict.hero.os}
-              <span className="mx-2 text-zinc-700">·</span>
-              {dict.hero.languages}
-            </p>
+            <HomePlatformCtas dict={dict} detected={detected} />
           </div>
-          <AppPreview dict={dict} />
+          <AppPreview dict={dict} locale={locale} />
         </div>
         <dl className="mt-16 grid gap-4 sm:grid-cols-3">
           {dict.stats.map((stat) => (
@@ -106,21 +91,7 @@ export default async function HomePage() {
             <h2 className="max-w-2xl text-3xl font-medium tracking-tight text-white sm:text-4xl">
               {dict.offline.title}
             </h2>
-            <p className="mt-4 max-w-2xl text-zinc-400">{dict.offline.body}</p>
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {dict.offline.points.map((point) => (
-                <li key={point} className="flex gap-3 text-sm text-zinc-300">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white" />
-                  {point}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/download"
-              className="mt-10 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-zinc-200"
-            >
-              {dict.hero.primary}
-            </Link>
+            <HomeOfflineCta dict={dict} detected={detected} />
           </div>
         </div>
       </section>

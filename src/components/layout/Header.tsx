@@ -17,6 +17,7 @@ type Props = {
 const links = [
   { href: "/features", key: "features" as const },
   { href: "/download", key: "download" as const },
+  { href: "/install", key: "install" as const },
   { href: "/about", key: "about" as const },
   { href: "/feedback", key: "feedback" as const },
 ];

@@ -7,6 +7,7 @@ export const es = {
   nav: {
     features: "Funciones",
     download: "Descargar",
+    install: "Instalar",
     about: "Acerca de",
     feedback: "Comentarios",
     getFree: "Descárgalo gratis",
@@ -17,10 +18,14 @@ export const es = {
     title: "El taller, funcionando sin red.",
     subtitle:
       "Clientes, dispositivos, reparaciones, diagnóstico, impresión y sync por Wi-Fi — en el PC del mostrador. Gratis, con tus datos en local. Sin cuenta, sin nube y sin suscripción.",
-    primary: "Descargar gratis para Windows",
+    primary: "Descargar gratis para {os}",
     secondary: "Ver funciones",
     languages: "English, Español, Deutsch",
-    os: "Windows 10 / 11 · x64 · instalador offline",
+    osHint: {
+      windows: "Windows 10 / 11 · x64 · instalador offline",
+      macos: "macOS · Apple Silicon · imagen de disco",
+      linux: "Linux · x64 · AppImage",
+    },
   },
   stats: [
     { value: "Gratis", label: "Sin suscripción" },
@@ -95,7 +100,14 @@ export const es = {
   },
   offline: {
     title: "Pensado para funcionar con el cable desconectado.",
-    body: "El instalador de Windows incluye WebView2 offline, así un PC de taller sin internet también puede instalar. Los datos viven en AppData — nunca en la nube.",
+    body: {
+      windows:
+        "El instalador de Windows incluye WebView2 offline, así un PC de taller sin internet también puede instalar. Aún no está firmado, así que SmartScreen avisará — es lo esperado. Los datos viven en AppData — nunca en la nube.",
+      macos:
+        "La imagen de disco de macOS está firmada con un Apple Developer ID. Ábrela, arrastra Korigio a Aplicaciones e iníciala. Los datos del taller se quedan en este Mac, nunca en la nube.",
+      linux:
+        "El AppImage de Linux es una build oficial. Márcalo como ejecutable y ábrelo. Los datos del taller se quedan en esta máquina — nunca en la nube.",
+    },
     points: [
       "Gratis — sin cuenta ni suscripción",
       "Sin fuentes ni APIs CDN para lo esencial",
@@ -107,13 +119,17 @@ export const es = {
     kicker: "Instaladores",
     title: "Descargar Korigio",
     subtitle:
-      "Windows es el destino soportado para talleres. macOS y Linux son descargas de conveniencia sin firmar.",
+      "Windows es el destino soportado para talleres. Después de descargar, sigue la guía de instalación — Windows mostrará una advertencia de SmartScreen porque el instalador aún no está firmado.",
+    guide: "Guía de instalación",
+    windowsCallout:
+      "Windows dirá que ha protegido el PC. Pulsa Más información y luego Ejecutar de todas formas — consulta la guía.",
     windows: "Windows",
     windowsHint: "10 / 11 · instalador x64",
     macos: "macOS",
     macosHint: "Imagen de disco (.dmg)",
     linux: "Linux",
     linuxHint: "AppImage",
+    recommended: "Para este equipo",
     cta: "Descargar",
     pending: "Disponible tras la próxima versión pública",
     statusEmpty:
@@ -121,6 +137,137 @@ export const es = {
     statusReady: "Última versión {version}. Elige el sistema operativo.",
     freeNote:
       "Korigio es gratis de descargar y usar. Sin cuenta ni suscripción — instálalo y los datos del taller se quedan en el PC.",
+    requirements: {
+      kicker: "Hardware",
+      title: "Requisitos mínimos",
+      subtitle:
+        "Un PC de mostrador habitual basta. Windows es el destino soportado para talleres; macOS y Linux son builds adicionales.",
+      note: "Pantalla 1024×768 o superior. Sin internet — Wi-Fi del taller opcional solo para el sync de equipo.",
+      labels: {
+        os: "Sistema",
+        cpu: "Procesador",
+        ram: "Memoria",
+        disk: "Disco libre",
+        webview: "Vista web",
+      },
+      windows: {
+        title: "Windows",
+        badge: "Destino de taller",
+        os: "Windows 10 x64 (21H2 o posterior) o Windows 11",
+        cpu: "x86-64 de doble núcleo, unos 1,5 GHz",
+        ram: "4 GB (2 GB mínimo absoluto)",
+        disk: "Unos 500 MB, más espacio para fotos y copias",
+        webview: "WebView2 va incluido — se instala sin internet",
+      },
+      macos: {
+        title: "macOS",
+        badge: "También disponible",
+        os: "macOS 11 Big Sur o posterior",
+        cpu: "Apple Silicon o Intel x86-64",
+        ram: "4 GB",
+        disk: "Unos 400 MB, más espacio para fotos y copias",
+        webview: "Usa la WebView integrada en macOS",
+      },
+      linux: {
+        title: "Linux",
+        badge: "También disponible",
+        os: "Ubuntu 22.04+, Debian 12+ o Fedora 39+",
+        cpu: "x86-64 de doble núcleo",
+        ram: "4 GB",
+        disk: "Unos 400 MB, más espacio para fotos y copias",
+        webview: "El AppImage incluye su propio runtime",
+      },
+    },
+  },
+  install: {
+    kicker: "Configuración",
+    title: "Cómo instalar Korigio",
+    subtitle:
+      "macOS y Linux se instalan como builds oficiales y firmadas. En Windows hay que pasar SmartScreen — todavía no tenemos un certificado de firma de Microsoft.",
+    downloadCta: "Descargar Korigio",
+    recommended: "Para este equipo",
+    windows: {
+      title: "Windows 10 / 11",
+      intro:
+        "Descarga el instalador x64 y permite que Windows lo ejecute. Como Korigio aún no está firmado con un certificado de editor, Windows lo trata como no reconocido. Es lo esperado.",
+      warningTitle: "La advertencia de Windows es normal",
+      warningBody:
+        "Aún no tenemos licencia de firma de código para Windows. Microsoft Defender SmartScreen bloqueará el primer arranque hasta que ejecutes el instalador que descargaste de este sitio.",
+      clicks: [
+        {
+          label: "Windows ha protegido el PC",
+          buttons: ["Más información", "Ejecutar de todas formas"],
+        },
+        {
+          label: "¿Permitir que esta app haga cambios?",
+          buttons: ["Sí"],
+        },
+      ],
+      steps: [
+        {
+          title: "Descarga el instalador",
+          body: "Usa el botón de Windows en la página de descarga y guarda el archivo en este PC.",
+        },
+        {
+          title: "Abre el instalador",
+          body: "Haz doble clic en el archivo descargado en la carpeta Descargas.",
+        },
+        {
+          title: "Pasa SmartScreen",
+          body: "Cuando aparezca Windows ha protegido el PC, pulsa Más información y luego Ejecutar de todas formas.",
+        },
+        {
+          title: "Permite los cambios",
+          body: "Si Control de cuentas de usuario pregunta si permites que la app haga cambios en el dispositivo, pulsa Sí.",
+        },
+        {
+          title: "Termina la instalación",
+          body: "Sigue el instalador y abre Korigio desde el menú Inicio.",
+        },
+      ],
+    },
+    macos: {
+      title: "macOS",
+      intro:
+        "La imagen de disco de macOS está firmada con un Apple Developer ID. Ábrela, pon Korigio en Aplicaciones e iníciala.",
+      steps: [
+        {
+          title: "Descarga la imagen de disco",
+          body: "Usa el botón de macOS en la página de descarga (.dmg).",
+        },
+        {
+          title: "Abre la imagen",
+          body: "Haz doble clic en el archivo .dmg descargado.",
+        },
+        {
+          title: "Instala",
+          body: "Arrastra Korigio a la carpeta Aplicaciones y luego expulsa la imagen de disco.",
+        },
+        {
+          title: "Abre Korigio",
+          body: "Iníciala desde Aplicaciones. Si macOS pide confirmar una app descargada de internet, pulsa Abrir.",
+        },
+      ],
+    },
+    linux: {
+      title: "Linux",
+      intro:
+        "La build de Linux es un AppImage oficial. Márcalo como ejecutable y ábrelo — no hace falta un asistente de instalación.",
+      steps: [
+        {
+          title: "Descarga el AppImage",
+          body: "Usa el botón de Linux en la página de descarga.",
+        },
+        {
+          title: "Hazlo ejecutable",
+          body: "Clic derecho en el archivo, Propiedades, y permite ejecutar como programa. En una terminal: chmod +x Korigio*.AppImage",
+        },
+        {
+          title: "Ejecuta Korigio",
+          body: "Haz doble clic en el AppImage o inícialo desde la terminal. Los datos del taller se quedan en esta máquina.",
+        },
+      ],
+    },
   },
   about: {
     kicker: "Acerca de",
@@ -170,17 +317,33 @@ export const es = {
   },
   preview: {
     title: "Korigio",
+    intake: "Iniciar recepción",
+    collapse: "Contraer barra lateral",
     home: "Inicio",
     customers: "Clientes",
     devices: "Dispositivos",
     repairs: "Reparaciones",
-    diagnosis: "Diagnóstico",
+    diagnosis: "Plantillas de diagnóstico",
+    companies: "Empresas",
     team: "Equipo",
     settings: "Ajustes",
     today: "Estimaciones cobradas hoy",
     week: "Estimaciones cobradas esta semana",
     open: "Estimaciones abiertas",
     status: "Abiertas por estado",
+    thisWeek: "Esta semana",
+    collected: "Estimaciones cobradas",
+    themeToLight: "Mostrar modo claro",
+    themeToDark: "Mostrar modo oscuro",
+    statuses: {
+      received: "Recibido",
+      diagnosis: "Diagnóstico",
+      waitingCustomer: "Esperando al cliente",
+      waitingPart: "Esperando pieza",
+      inRepair: "En reparación",
+      ready: "Listo",
+      awaitingPickup: "Listo para recoger",
+    },
   },
   notFound: {
     title: "Página no encontrada",

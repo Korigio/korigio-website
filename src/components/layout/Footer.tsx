@@ -39,6 +39,11 @@ export function Footer({ dict }: Props) {
                 {dict.nav.download}
               </Link>
             </li>
+            <li>
+              <Link href="/install" className="hover:text-white">
+                {dict.nav.install}
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
