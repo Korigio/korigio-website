@@ -11,7 +11,7 @@ type Props = {
 };
 
 const fieldClass =
-  "mt-1.5 w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-600 focus:border-white/30";
+  "mt-1.5 w-full rounded-2xl border border-border bg-elevated px-4 py-3 text-sm text-foreground outline-none placeholder:text-faint focus:border-foreground/30";
 
 export function FeedbackForm({ dict, ticket }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error" | "confirm">(
@@ -60,7 +60,7 @@ export function FeedbackForm({ dict, ticket }: Props) {
       onSubmit={onSubmit}
       className="relative space-y-4 [&:not(:has(input[name=confirmed]:checked))_button[type=submit]]:pointer-events-none [&:not(:has(input[name=confirmed]:checked))_button[type=submit]]:opacity-60"
     >
-      <label className="block text-sm text-zinc-400">
+      <label className="block text-sm text-muted">
         {copy.typeLabel}
         <select required name="type" defaultValue="question" className={fieldClass}>
           {FEEDBACK_TYPES.map((type) => (
@@ -73,15 +73,15 @@ export function FeedbackForm({ dict, ticket }: Props) {
       <div hidden aria-hidden="true">
         <input tabIndex={-1} autoComplete="off" name="website" />
       </div>
-      <label className="block text-sm text-zinc-400">
+      <label className="block text-sm text-muted">
         {copy.name}
         <input required name="name" maxLength={200} className={fieldClass} />
       </label>
-      <label className="block text-sm text-zinc-400">
+      <label className="block text-sm text-muted">
         {copy.email}
         <input required type="email" name="email" maxLength={254} className={fieldClass} />
       </label>
-      <label className="block text-sm text-zinc-400">
+      <label className="block text-sm text-muted">
         {copy.message}
         <textarea
           required
@@ -92,30 +92,30 @@ export function FeedbackForm({ dict, ticket }: Props) {
           className={fieldClass}
         />
       </label>
-      <label className="flex cursor-pointer items-start gap-3 text-sm text-zinc-300">
+      <label className="flex cursor-pointer items-start gap-3 text-sm text-muted">
         <input
           required
           type="checkbox"
           name="confirmed"
-          className="mt-0.5 size-4 shrink-0 rounded border-white/20 bg-black accent-white"
+          className="mt-0.5 size-4 shrink-0 rounded border-border bg-elevated accent-cta"
         />
         <span>{copy.confirm}</span>
       </label>
       <button
         type="submit"
         disabled={status === "sending"}
-        className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-zinc-200 disabled:opacity-60"
+        className="rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground hover:bg-cta-hover disabled:opacity-60"
       >
         {status === "sending" ? copy.sending : copy.submit}
       </button>
       {status === "ok" ? (
-        <p className="text-sm text-zinc-300">{copy.success}</p>
+        <p className="text-sm text-muted">{copy.success}</p>
       ) : null}
       {status === "confirm" ? (
-        <p className="text-sm text-red-300">{copy.confirmError}</p>
+        <p className="text-sm text-danger">{copy.confirmError}</p>
       ) : null}
       {status === "error" ? (
-        <p className="text-sm text-red-300">{copy.error}</p>
+        <p className="text-sm text-danger">{copy.error}</p>
       ) : null}
     </form>
   );

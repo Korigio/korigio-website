@@ -18,20 +18,20 @@ export function HomePlatformCtas({ dict, detected }: Props) {
       <div className="mt-8 flex flex-wrap gap-3">
         <Link
           href="/download"
-          className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-zinc-200"
+          className="rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground hover:bg-cta-hover"
         >
           {copy.primary}
         </Link>
         <Link
           href="/features"
-          className="rounded-full border border-white/12 px-5 py-2.5 text-sm text-zinc-200 hover:bg-white/6"
+          className="rounded-full border border-border px-5 py-2.5 text-sm text-foreground hover:bg-surface-strong"
         >
           {dict.hero.secondary}
         </Link>
       </div>
-      <p className="mt-5 text-sm text-zinc-500">
+      <p className="mt-5 text-sm text-subtle">
         {copy.osHint}
-        <span className="mx-2 text-zinc-700">·</span>
+        <span className="mx-2 text-faint">·</span>
         {dict.hero.languages}
       </p>
     </>
@@ -43,18 +43,18 @@ export function HomeOfflineCta({ dict, detected }: Props) {
 
   return (
     <>
-      <p className="mt-4 max-w-2xl text-zinc-400">{copy.offlineBody}</p>
+      <p className="mt-4 max-w-2xl text-muted">{copy.offlineBody}</p>
       <ul className="mt-8 grid gap-3 sm:grid-cols-2">
         {dict.offline.points.map((point) => (
-          <li key={point} className="flex gap-3 text-sm text-zinc-300">
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white" />
+          <li key={point} className="flex gap-3 text-sm text-muted">
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground" />
             {point}
           </li>
         ))}
       </ul>
       <Link
         href="/download"
-        className="mt-10 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-zinc-200"
+        className="mt-10 inline-flex rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground hover:bg-cta-hover"
       >
         {copy.primary}
       </Link>

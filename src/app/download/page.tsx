@@ -41,27 +41,27 @@ export default async function DownloadPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-      <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
+      <p className="text-xs uppercase tracking-[0.22em] text-subtle">
         {dict.download.kicker}
       </p>
-      <h1 className="mt-3 text-4xl font-medium tracking-tight text-white sm:text-5xl">
+      <h1 className="mt-3 text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
         {dict.download.title}
       </h1>
-      <p className="mt-5 max-w-2xl text-lg text-zinc-400">{dict.download.subtitle}</p>
+      <p className="mt-5 max-w-2xl text-lg text-muted">{dict.download.subtitle}</p>
       {release.version ? (
-        <p className="mt-6 inline-flex rounded-full border border-white/12 px-3 py-1 text-sm text-zinc-400">
+        <p className="mt-6 inline-flex rounded-full border border-border px-3 py-1 text-sm text-muted">
           v{release.version}
         </p>
       ) : null}
       <DownloadCards cards={cards} detected={detected} dict={dict} />
-      <p className="mt-8 max-w-2xl text-sm text-amber-100/70">
+      <p className="mt-8 max-w-2xl text-sm text-warning-muted">
         {dict.download.windowsCallout}{" "}
-        <Link href="/install#windows" className="text-amber-50 underline-offset-4 hover:underline">
+        <Link href="/install#windows" className="text-warning underline-offset-4 hover:underline">
           {dict.download.guide}
         </Link>
       </p>
-      <p className="mt-4 max-w-2xl text-sm text-zinc-500">{status}</p>
-      <p className="mt-4 max-w-2xl text-sm text-zinc-500">{dict.download.freeNote}</p>
+      <p className="mt-4 max-w-2xl text-sm text-subtle">{status}</p>
+      <p className="mt-4 max-w-2xl text-sm text-subtle">{dict.download.freeNote}</p>
       <Requirements dict={dict} detected={detected} />
     </div>
   );

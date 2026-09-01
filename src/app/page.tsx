@@ -13,13 +13,13 @@ export default async function HomePage() {
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-16 sm:pt-24">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
+            <p className="text-xs uppercase tracking-[0.22em] text-subtle">
               {dict.hero.kicker}
             </p>
-            <h1 className="mt-4 max-w-xl text-4xl font-medium leading-[1.08] tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-4 max-w-xl text-4xl font-medium leading-[1.08] tracking-tight text-foreground sm:text-6xl">
               {dict.hero.title}
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-7 text-zinc-400 sm:text-lg">
+            <p className="mt-5 max-w-lg text-base leading-7 text-muted sm:text-lg">
               {dict.hero.subtitle}
             </p>
             <HomePlatformCtas dict={dict} detected={detected} />
@@ -30,65 +30,65 @@ export default async function HomePage() {
           {dict.stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-3xl border border-white/8 bg-white/3 px-6 py-5"
+              className="rounded-3xl border border-border bg-surface px-6 py-5"
             >
-              <dt className="text-sm text-zinc-500">{stat.label}</dt>
-              <dd className="mt-1 text-3xl tracking-tight text-white">{stat.value}</dd>
+              <dt className="text-sm text-subtle">{stat.label}</dt>
+              <dd className="mt-1 text-3xl tracking-tight text-foreground">{stat.value}</dd>
             </div>
           ))}
         </dl>
       </section>
 
-      <section className="border-t border-white/8">
+      <section className="border-t border-border">
         <div className="mx-auto max-w-6xl px-5 py-20">
-          <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
+          <p className="text-xs uppercase tracking-[0.22em] text-subtle">
             {dict.features.kicker}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
             {dict.features.title}
           </h2>
-          <p className="mt-4 max-w-2xl text-zinc-400">{dict.features.subtitle}</p>
+          <p className="mt-4 max-w-2xl text-muted">{dict.features.subtitle}</p>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {dict.features.items.map((item) => (
               <article
                 key={item.title}
-                className="rounded-3xl border border-white/8 bg-white/3 p-5"
+                className="rounded-3xl border border-border bg-surface p-5"
               >
-                <h3 className="text-base font-medium text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">{item.body}</p>
+                <h3 className="text-base font-medium text-foreground">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{item.body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-white/8">
+      <section className="border-t border-border">
         <div className="mx-auto max-w-6xl px-5 py-20">
-          <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
+          <p className="text-xs uppercase tracking-[0.22em] text-subtle">
             {dict.workflow.kicker}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
             {dict.workflow.title}
           </h2>
           <ol className="mt-10 grid gap-4 md:grid-cols-4">
             {dict.workflow.steps.map((step) => (
               <li
                 key={step.n}
-                className="rounded-3xl border border-white/8 bg-black p-5"
+                className="rounded-3xl border border-border bg-elevated p-5"
               >
-                <p className="font-mono text-xs text-zinc-500">{step.n}</p>
-                <h3 className="mt-3 text-lg text-white">{step.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">{step.body}</p>
+                <p className="font-mono text-xs text-subtle">{step.n}</p>
+                <h3 className="mt-3 text-lg text-foreground">{step.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{step.body}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="border-t border-white/8">
+      <section className="border-t border-border">
         <div className="mx-auto max-w-6xl px-5 py-20">
-          <div className="rounded-[32px] border border-white/10 bg-white/4 px-6 py-12 sm:px-12">
-            <h2 className="max-w-2xl text-3xl font-medium tracking-tight text-white sm:text-4xl">
+          <div className="rounded-[32px] border border-border bg-surface px-6 py-12 sm:px-12">
+            <h2 className="max-w-2xl text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
               {dict.offline.title}
             </h2>
             <HomeOfflineCta dict={dict} detected={detected} />

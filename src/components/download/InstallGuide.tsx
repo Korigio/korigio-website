@@ -45,48 +45,48 @@ export function InstallGuide({ dict, detected }: Props) {
             key={id}
             id={id}
             className={cn(
-              "scroll-mt-24 rounded-[28px] border border-white/8 bg-white/3 p-6 sm:p-8",
-              isFeatured && "border-white/16 bg-white/6 sm:p-10",
+              "scroll-mt-24 rounded-[28px] border border-border bg-surface p-6 sm:p-8",
+              isFeatured && "border-border-strong bg-surface-strong sm:p-10",
             )}
           >
             {isFeatured ? (
-              <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-subtle">
                 {dict.install.recommended}
               </p>
             ) : null}
             <h2
               className={cn(
-                "text-white",
+                "text-foreground",
                 isFeatured ? "mt-3 text-3xl sm:text-4xl" : "text-2xl",
               )}
             >
               {copy.title}
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-400 sm:text-base">
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-muted sm:text-base">
               {copy.intro}
             </p>
 
             {windows ? (
-              <div className="mt-8 rounded-3xl border border-amber-200/20 bg-amber-100/6 p-5 sm:p-6">
-                <h3 className="text-lg text-amber-100">{windows.warningTitle}</h3>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-amber-100/70">
+              <div className="mt-8 rounded-3xl border border-warning-border bg-warning-fill p-5 sm:p-6">
+                <h3 className="text-lg text-warning">{windows.warningTitle}</h3>
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-warning-muted">
                   {windows.warningBody}
                 </p>
                 <ol className="mt-5 space-y-4">
                   {windows.clicks.map((click) => (
                     <li key={click.label}>
-                      <p className="text-xs uppercase tracking-[0.16em] text-amber-100/50">
+                      <p className="text-xs uppercase tracking-[0.16em] text-warning-muted">
                         {click.label}
                       </p>
                       <div className="mt-2 flex flex-wrap items-center gap-2">
                         {click.buttons.map((button, index) => (
                           <span key={button} className="flex items-center gap-2">
                             {index > 0 ? (
-                              <span className="text-amber-100/40" aria-hidden>
+                              <span className="text-warning-muted" aria-hidden>
                                 →
                               </span>
                             ) : null}
-                            <span className="inline-flex rounded-full border border-amber-100/25 bg-black/30 px-3 py-1 text-sm font-medium text-amber-50">
+                            <span className="inline-flex rounded-full border border-warning-border bg-elevated px-3 py-1 text-sm font-medium text-warning">
                               {button}
                             </span>
                           </span>
@@ -102,13 +102,13 @@ export function InstallGuide({ dict, detected }: Props) {
               {copy.steps.map((step, index) => (
                 <li
                   key={step.title}
-                  className="rounded-2xl border border-white/8 bg-black/30 p-5"
+                  className="rounded-2xl border border-border bg-elevated p-5"
                 >
-                  <p className="font-mono text-xs text-zinc-500">
+                  <p className="font-mono text-xs text-subtle">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-2 text-base text-white">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-400">{step.body}</p>
+                  <h3 className="mt-2 text-base text-foreground">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">{step.body}</p>
                 </li>
               ))}
             </ol>
@@ -119,7 +119,7 @@ export function InstallGuide({ dict, detected }: Props) {
       <div className="pt-2">
         <Link
           href="/download"
-          className="inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-zinc-200"
+          className="inline-flex rounded-full bg-cta px-5 py-2.5 text-sm font-medium text-cta-foreground hover:bg-cta-hover"
         >
           {dict.install.downloadCta}
         </Link>

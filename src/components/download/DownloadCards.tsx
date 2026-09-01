@@ -39,23 +39,23 @@ export function DownloadCards({ cards, detected, dict }: Props) {
           <article
             key={card.id}
             className={cn(
-              "flex flex-col rounded-[28px] border border-white/8 bg-white/3",
+              "flex flex-col rounded-[28px] border border-border bg-surface",
               card.asset ? "" : "opacity-55",
               isFeatured
-                ? "border-white/16 bg-white/6 p-8 md:col-span-2 md:rounded-[32px] md:p-10"
+                ? "border-border-strong bg-surface-strong p-8 md:col-span-2 md:rounded-[32px] md:p-10"
                 : featured
                   ? "p-5"
                   : "p-6",
             )}
           >
             {isFeatured ? (
-              <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+              <p className="text-[11px] uppercase tracking-[0.18em] text-subtle">
                 {dict.download.recommended}
               </p>
             ) : null}
             <h2
               className={cn(
-                "text-white",
+                "text-foreground",
                 isFeatured ? "mt-3 text-3xl sm:text-4xl" : "text-xl",
               )}
             >
@@ -63,7 +63,7 @@ export function DownloadCards({ cards, detected, dict }: Props) {
             </h2>
             <p
               className={cn(
-                "mt-1 text-zinc-500",
+                "mt-1 text-subtle",
                 isFeatured ? "text-base" : "text-sm",
               )}
             >
@@ -75,7 +75,7 @@ export function DownloadCards({ cards, detected, dict }: Props) {
                   <a
                     href={card.asset.url}
                     className={cn(
-                      "inline-flex rounded-full bg-white font-medium text-black hover:bg-zinc-200",
+                      "inline-flex rounded-full bg-cta font-medium text-cta-foreground hover:bg-cta-hover",
                       isFeatured ? "px-5 py-2.5 text-sm" : "px-4 py-2 text-sm",
                     )}
                   >
@@ -83,13 +83,13 @@ export function DownloadCards({ cards, detected, dict }: Props) {
                   </a>
                   <Link
                     href={`/install#${card.id}`}
-                    className="text-sm text-zinc-400 hover:text-white"
+                    className="text-sm text-muted hover:text-foreground"
                   >
                     {dict.download.guide}
                   </Link>
                 </div>
               ) : (
-                <p className="text-sm text-zinc-500">{dict.download.pending}</p>
+                <p className="text-sm text-subtle">{dict.download.pending}</p>
               )}
             </div>
           </article>

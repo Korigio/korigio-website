@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
 :root {
+  --background: #f4f6f8;
+  --foreground: #1a2332;
+  --muted: #5b6b7c;
+  --subtle: #6b7a8a;
+  --faint: #8b96a3;
+  --surface: #ffffff;
+  --surface-strong: #eef1f4;
+  --elevated: #ffffff;
+  --border: rgba(26, 35, 50, 0.1);
+  --border-strong: rgba(26, 35, 50, 0.16);
+  --header: rgba(244, 246, 248, 0.82);
+  --cta: #111827;
+  --cta-foreground: #ffffff;
+  --cta-hover: #1f2937;
+  --warning: #b45309;
+  --warning-muted: #a16207;
+  --warning-fill: rgba(245, 158, 11, 0.1);
+  --warning-border: rgba(180, 83, 9, 0.22);
+  --danger: #dc2626;
+  --html-bg: #eef1f4;
+  --grid-line: rgba(26, 35, 50, 0.06);
+  --glow:
+    0 0 0 1px rgba(26, 35, 50, 0.08),
+    0 24px 80px rgba(15, 23, 42, 0.1);
+  --selection-bg: #111827;
+  --selection-fg: #ffffff;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --background: #050505;
+    --foreground: #f4f4f5;
+    --muted: #a1a1aa;
+    --subtle: #71717a;
+    --faint: #52525b;
+    --surface: rgba(255, 255, 255, 0.03);
+    --surface-strong: rgba(255, 255, 255, 0.06);
+    --elevated: #000000;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --header: rgba(0, 0, 0, 0.7);
+    --cta: #ffffff;
+    --cta-foreground: #000000;
+    --cta-hover: #e4e4e7;
+    --warning: #fde68a;
+    --warning-muted: rgba(254, 243, 199, 0.7);
+    --warning-fill: rgba(254, 243, 199, 0.06);
+    --warning-border: rgba(253, 230, 138, 0.2);
+    --danger: #fca5a5;
+    --html-bg: #000000;
+    --grid-line: rgba(255, 255, 255, 0.035);
+    --glow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 24px 80px rgba(0, 0, 0, 0.55);
+    --selection-bg: #ffffff;
+    --selection-fg: #000000;
+    color-scheme: dark;
+  }
+}
+
+html[data-theme="dark"] {
   --background: #050505;
   --foreground: #f4f4f5;
   --muted: #a1a1aa;
-  --surface: #0c0c0c;
+  --subtle: #71717a;
+  --faint: #52525b;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-strong: rgba(255, 255, 255, 0.06);
+  --elevated: #000000;
   --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --header: rgba(0, 0, 0, 0.7);
+  --cta: #ffffff;
+  --cta-foreground: #000000;
+  --cta-hover: #e4e4e7;
+  --warning: #fde68a;
+  --warning-muted: rgba(254, 243, 199, 0.7);
+  --warning-fill: rgba(254, 243, 199, 0.06);
+  --warning-border: rgba(253, 230, 138, 0.2);
+  --danger: #fca5a5;
+  --html-bg: #000000;
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --glow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 24px 80px rgba(0, 0, 0, 0.55);
+  --selection-bg: #ffffff;
+  --selection-fg: #000000;
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  --background: #f4f6f8;
+  --foreground: #1a2332;
+  --muted: #5b6b7c;
+  --subtle: #6b7a8a;
+  --faint: #8b96a3;
+  --surface: #ffffff;
+  --surface-strong: #eef1f4;
+  --elevated: #ffffff;
+  --border: rgba(26, 35, 50, 0.1);
+  --border-strong: rgba(26, 35, 50, 0.16);
+  --header: rgba(244, 246, 248, 0.82);
+  --cta: #111827;
+  --cta-foreground: #ffffff;
+  --cta-hover: #1f2937;
+  --warning: #b45309;
+  --warning-muted: #a16207;
+  --warning-fill: rgba(245, 158, 11, 0.1);
+  --warning-border: rgba(180, 83, 9, 0.22);
+  --danger: #dc2626;
+  --html-bg: #eef1f4;
+  --grid-line: rgba(26, 35, 50, 0.06);
+  --glow:
+    0 0 0 1px rgba(26, 35, 50, 0.08),
+    0 24px 80px rgba(15, 23, 42, 0.1);
+  --selection-bg: #111827;
+  --selection-fg: #ffffff;
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-faint: var(--faint);
   --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-elevated: var(--elevated);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-header: var(--header);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-cta-hover: var(--cta-hover);
+  --color-warning: var(--warning);
+  --color-warning-muted: var(--warning-muted);
+  --color-warning-fill: var(--warning-fill);
+  --color-warning-border: var(--warning-border);
+  --color-danger: var(--danger);
   --font-sans: var(--font-outfit);
   --font-mono: var(--font-geist-mono);
 }
 
 html {
-  background: #000;
-  color-scheme: dark;
+  background: var(--html-bg);
 }
 
 body {
@@ -30,22 +157,20 @@ body {
 }
 
 ::selection {
-  background: #fff;
-  color: #000;
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 .grid-fade {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 75%);
 }
 
 .glow-ring {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 24px 80px rgba(0, 0, 0, 0.55);
+  box-shadow: var(--glow);
 }
 
 .app-preview {
