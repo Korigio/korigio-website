@@ -16,8 +16,11 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Standard scripts live in `package.json` (`dev`, `build`, `start`, `lint`, `typecheck`) and setup is the plain `npm install` / `npm run dev` flow documented in `README.md`. Package manager is **npm** (only `package-lock.json`). Dev server runs on http://localhost:3000.
 
+Product shape: Korigio is **free** — no user accounts, no login, and no subscription. The website is marketing-only; the desktop app keeps all workshop data locally. Do not reintroduce auth/account/pricing surfaces.
+
 Non-obvious gotchas:
 - `npm run typecheck` (`tsc --noEmit`) fails standalone with `Cannot find name 'LayoutProps'` in `src/app/layout.tsx` unless the Next.js generated types in `.next/types` exist. Run `npm run build` (or `npm run dev`) once first to generate them, then `typecheck` passes. `next build` runs the type check itself, so a green build already covers types.
-- No database or separate backend service. Auth and the contact form persist to gitignored JSON files under `data/` (`users.json`, `messages.json`), created automatically on first write. Deleting `data/` resets all accounts/messages.
-- API field names are camelCase: registration/account endpoints expect `workshopName` (not `workshop`); the account update endpoint is `PATCH /api/account` (not PUT).
-- The `/download` page fetches GitHub Releases server-side and degrades gracefully when offline/unset; `SESSION_SECRET` and `GITHUB_RELEASES_REPO` are optional in dev (see `.env.example`).
+- No database or separate backend service. The only persisted data is submitted feedback, written to a gitignored `data/feedback.json` (created on first write via `src/lib/feedback.ts`). Deleting `data/` resets it.
+- The feedback endpoint is `POST /api/feedback`; it requires a `type` of `bug`, `feature`, or `question` plus `name`, `email`, and `message`.
+- All user-facing copy is localized in `src/lib/i18n/{en,es,de}.ts`; `en` is the source of truth for the `Dictionary` type, so add keys there first, then mirror in `es`/`de` for runtime correctness.
+- The `/download` page fetches GitHub Releases server-side and degrades gracefully when offline/unset; `GITHUB_RELEASES_REPO` is optional in dev (see `.env.example`).

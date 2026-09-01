@@ -1,12 +1,12 @@
 # Korigio website
 
-Public marketing and account site for **Korigio**, the offline Windows workshop app.
+Public marketing site for **Korigio**, the free offline Windows workshop app.
 
 GitHub: [Korigio/korigio-website](https://github.com/Korigio/korigio-website). Not part of the desktop app repo.
 
 ## Stack
 
-Next.js (App Router) · TypeScript · Tailwind CSS v4 · cookie sessions (local JSON store)
+Next.js (App Router) · TypeScript · Tailwind CSS v4 · local JSON store (feedback)
 
 ## Run
 
@@ -25,12 +25,9 @@ Open [http://localhost:3000](http://localhost:3000).
 | `/` | Product landing |
 | `/features` | Workshop features from the desktop app |
 | `/download` | Installers from the public GitHub release |
-| `/pricing` | Workshop / LAN team licensing |
 | `/about` | Product story |
-| `/contact` | Contact form (stored in `data/messages.json`) |
-| `/register` `/login` | Accounts |
-| `/account` | Workshop profile and download shortcut |
+| `/feedback` | Feedback form — report a bug, request a feature, or ask a question (stored in `data/feedback.json`) |
 
-Accounts and contact messages are stored in `data/` on disk (gitignored). Set `SESSION_SECRET` in production.
+Korigio is free: no accounts, no subscription, and workshop data stays on the local PC. The website only stores submitted feedback in `data/` on disk (gitignored).
 
 Downloads read `https://api.github.com/repos/Korigio/korigio-downloads/releases/latest`. Override with `GITHUB_RELEASES_REPO`.

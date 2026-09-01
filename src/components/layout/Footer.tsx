@@ -39,11 +39,6 @@ export function Footer({ dict }: Props) {
                 {dict.nav.download}
               </Link>
             </li>
-            <li>
-              <Link href="/pricing" className="hover:text-white">
-                {dict.nav.pricing}
-              </Link>
-            </li>
           </ul>
         </div>
         <div>
@@ -57,13 +52,8 @@ export function Footer({ dict }: Props) {
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-white">
-                {dict.nav.contact}
-              </Link>
-            </li>
-            <li>
-              <Link href="/account" className="hover:text-white">
-                {dict.nav.account}
+              <Link href="/feedback" className="hover:text-white">
+                {dict.nav.feedback}
               </Link>
             </li>
           </ul>

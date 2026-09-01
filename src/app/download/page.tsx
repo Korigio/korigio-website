@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getDictionary, getLocale } from "@/lib/i18n";
 import { getLatestRelease, type ReleaseAsset } from "@/lib/releases";
 
@@ -62,12 +61,7 @@ export default async function DownloadPage() {
         ))}
       </div>
       <p className="mt-8 max-w-2xl text-sm text-zinc-500">{status}</p>
-      <p className="mt-4 text-sm text-zinc-500">
-        {dict.download.loginHint}{" "}
-        <Link href="/register" className="text-white underline-offset-4 hover:underline">
-          {dict.nav.register}
-        </Link>
-      </p>
+      <p className="mt-4 max-w-2xl text-sm text-zinc-500">{dict.download.freeNote}</p>
     </div>
   );
 }

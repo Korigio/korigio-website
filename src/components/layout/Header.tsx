@@ -7,24 +7,21 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LOCALES, type Locale } from "@/lib/constants";
 import type { Dictionary } from "@/lib/i18n";
-import type { PublicUser } from "@/lib/users";
 import { cn } from "@/lib/cn";
 
 type Props = {
   dict: Dictionary;
-  user: PublicUser | null;
   locale: Locale;
 };
 
 const links = [
   { href: "/features", key: "features" as const },
   { href: "/download", key: "download" as const },
-  { href: "/pricing", key: "pricing" as const },
   { href: "/about", key: "about" as const },
-  { href: "/contact", key: "contact" as const },
+  { href: "/feedback", key: "feedback" as const },
 ];
 
-export function Header({ dict, user, locale }: Props) {
+export function Header({ dict, locale }: Props) {
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -35,13 +32,6 @@ export function Header({ dict, user, locale }: Props) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ locale: next }),
     });
-    router.refresh();
-  }
-
-  async function logout() {
-    await fetch("/api/auth/logout", { method: "POST" });
-    setOpen(false);
-    router.push("/");
     router.refresh();
   }
 
@@ -79,38 +69,12 @@ export function Header({ dict, user, locale }: Props) {
 
         <div className="hidden items-center gap-2 md:flex">
           <LocalePills current={locale} onChange={setLocale} />
-          {user ? (
-            <>
-              <Link
-                href="/account"
-                className="rounded-full px-3.5 py-1.5 text-sm text-zinc-300 hover:text-white"
-              >
-                {dict.nav.account}
-              </Link>
-              <button
-                type="button"
-                onClick={logout}
-                className="rounded-full border border-white/12 px-3.5 py-1.5 text-sm text-zinc-300 hover:bg-white/6 hover:text-white"
-              >
-                {dict.nav.logout}
-              </button>
-            </>
-          ) : (
-            <>
-              <Link
-                href="/login"
-                className="rounded-full px-3.5 py-1.5 text-sm text-zinc-300 hover:text-white"
-              >
-                {dict.nav.login}
-              </Link>
-              <Link
-                href="/register"
-                className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black hover:bg-zinc-200"
-              >
-                {dict.nav.register}
-              </Link>
-            </>
-          )}
+          <Link
+            href="/download"
+            className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black hover:bg-zinc-200"
+          >
+            {dict.nav.getFree}
+          </Link>
         </div>
 
         <button
@@ -138,32 +102,13 @@ export function Header({ dict, user, locale }: Props) {
             ))}
             <div className="mt-2 flex items-center justify-between gap-3 border-t border-white/8 pt-3">
               <LocalePills current={locale} onChange={setLocale} />
-              {user ? (
-                <div className="flex gap-2">
-                  <Link
-                    href="/account"
-                    onClick={() => setOpen(false)}
-                    className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black"
-                  >
-                    {dict.nav.account}
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={logout}
-                    className="rounded-full border border-white/12 px-3.5 py-1.5 text-sm"
-                  >
-                    {dict.nav.logout}
-                  </button>
-                </div>
-              ) : (
-                <Link
-                  href="/register"
-                  onClick={() => setOpen(false)}
-                  className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black"
-                >
-                  {dict.nav.register}
-                </Link>
-              )}
+              <Link
+                href="/download"
+                onClick={() => setOpen(false)}
+                className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black"
+              >
+                {dict.nav.getFree}
+              </Link>
             </div>
           </div>
         </div>

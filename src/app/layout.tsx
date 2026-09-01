@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist_Mono, Outfit } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { getDictionary, getLocale } from "@/lib/i18n";
-import { getSessionUser } from "@/lib/session";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const locale = await getLocale();
   const dict = getDictionary(locale);
-  const user = await getSessionUser();
 
   return (
     <html
@@ -37,7 +35,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${outfit.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <SiteShell dict={dict} user={user} locale={locale}>
+        <SiteShell dict={dict} locale={locale}>
           {children}
         </SiteShell>
       </body>
