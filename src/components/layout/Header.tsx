@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { LOCALES, type Locale } from "@/lib/constants";
 import type { Dictionary } from "@/lib/i18n";
 import { cn } from "@/lib/cn";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
 type Props = {
   dict: Dictionary;
@@ -68,24 +69,26 @@ export function Header({ dict, locale }: Props) {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
-          <LocalePills current={locale} onChange={setLocale} />
-          <Link
-            href="/download"
-            className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black hover:bg-zinc-200"
+        <div className="flex items-center gap-2">
+          <div className="hidden items-center gap-2 md:flex">
+            <LocalePills current={locale} onChange={setLocale} />
+            <Link
+              href="/download"
+              className="rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black hover:bg-zinc-200"
+            >
+              {dict.nav.getFree}
+            </Link>
+          </div>
+          <ThemeToggle toLight={dict.nav.themeToLight} toDark={dict.nav.themeToDark} />
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white md:hidden"
+            onClick={() => setOpen((value) => !value)}
+            aria-label={dict.nav.menu}
           >
-            {dict.nav.getFree}
-          </Link>
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
         </div>
-
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white md:hidden"
-          onClick={() => setOpen((value) => !value)}
-          aria-label={dict.nav.menu}
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
       </div>
 
       {open ? (

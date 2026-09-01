@@ -12,6 +12,8 @@ export const es = {
     feedback: "Comentarios",
     getFree: "Descárgalo gratis",
     menu: "Menú",
+    themeToLight: "Mostrar modo claro",
+    themeToDark: "Mostrar modo oscuro",
   },
   hero: {
     kicker: "Gratis · para talleres independientes",
@@ -319,8 +321,6 @@ export const es = {
   },
   preview: {
     alt: "Panel de taller de Korigio",
-    themeToLight: "Mostrar modo claro",
-    themeToDark: "Mostrar modo oscuro",
   },
   notFound: {
     title: "Página no encontrada",

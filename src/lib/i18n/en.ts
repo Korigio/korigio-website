@@ -12,6 +12,8 @@ export const en = {
     feedback: "Feedback",
     getFree: "Get it free",
     menu: "Menu",
+    themeToLight: "Show light appearance",
+    themeToDark: "Show dark appearance",
   },
   hero: {
     kicker: "Free · for independent repair shops",
@@ -319,8 +321,6 @@ export const en = {
   },
   preview: {
     alt: "Korigio workshop dashboard",
-    themeToLight: "Show light appearance",
-    themeToDark: "Show dark appearance",
   },
   notFound: {
     title: "Page not found",

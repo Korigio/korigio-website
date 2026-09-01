@@ -12,6 +12,8 @@ export const de = {
     feedback: "Feedback",
     getFree: "Gratis laden",
     menu: "Menü",
+    themeToLight: "Helle Darstellung zeigen",
+    themeToDark: "Dunkle Darstellung zeigen",
   },
   hero: {
     kicker: "Kostenlos · für unabhängige Werkstätten",
@@ -319,8 +321,6 @@ export const de = {
   },
   preview: {
     alt: "Korigio-Werkstattdashboard",
-    themeToLight: "Helle Darstellung zeigen",
-    themeToDark: "Dunkle Darstellung zeigen",
   },
   notFound: {
     title: "Seite nicht gefunden",
