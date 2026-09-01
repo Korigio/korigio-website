@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { isFeedbackType } from "@/lib/feedback-types";
 import { saveFeedback } from "@/lib/feedback";
+import { verifyFeedbackTicket } from "@/lib/feedback-ticket";
 import { sendFeedbackEmail } from "@/lib/send-feedback-email";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -12,11 +13,17 @@ export async function POST(request: Request) {
     email?: string;
     message?: string;
     website?: string;
+    confirmed?: boolean;
+    ticket?: { nonce?: string; issuedAt?: string; sig?: string };
   } | null;
 
   // Honeypot: bots that fill hidden fields are dropped quietly.
   if (body?.website) {
     return NextResponse.json({ ok: true });
+  }
+
+  if (body?.confirmed !== true || !verifyFeedbackTicket(body.ticket ?? {})) {
+    return NextResponse.json({ error: "confirm" }, { status: 400 });
   }
 
   const type = body?.type;

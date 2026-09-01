@@ -24,7 +24,7 @@ export default async function HomePage() {
             </p>
             <HomePlatformCtas dict={dict} detected={detected} />
           </div>
-          <AppPreview dict={dict} locale={locale} />
+          <AppPreview dict={dict} />
         </div>
         <dl className="mt-16 grid gap-4 sm:grid-cols-3">
           {dict.stats.map((stat) => (

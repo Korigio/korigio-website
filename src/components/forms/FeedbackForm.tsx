@@ -2,23 +2,32 @@
 
 import { useState } from "react";
 import { FEEDBACK_TYPES } from "@/lib/feedback-types";
+import type { FeedbackTicket } from "@/lib/feedback-ticket";
 import type { Dictionary } from "@/lib/i18n";
 
 type Props = {
   dict: Dictionary;
+  ticket: FeedbackTicket;
 };
 
 const fieldClass =
   "mt-1.5 w-full rounded-2xl border border-white/10 bg-black px-4 py-3 text-sm text-white outline-none placeholder:text-zinc-600 focus:border-white/30";
 
-export function FeedbackForm({ dict }: Props) {
-  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
+export function FeedbackForm({ dict, ticket }: Props) {
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error" | "confirm">(
+    "idle",
+  );
   const copy = dict.feedback;
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
+    const confirmed = data.get("confirmed") === "on";
+    if (!confirmed) {
+      setStatus("confirm");
+      return;
+    }
     setStatus("sending");
     const response = await fetch("/api/feedback", {
       method: "POST",
@@ -29,10 +38,17 @@ export function FeedbackForm({ dict }: Props) {
         email: data.get("email"),
         message: data.get("message"),
         website: data.get("website"),
+        confirmed: true,
+        ticket: {
+          nonce: ticket.nonce,
+          issuedAt: ticket.issuedAt,
+          sig: ticket.sig,
+        },
       }),
     });
     if (!response.ok) {
-      setStatus("error");
+      const payload = (await response.json().catch(() => null)) as { error?: string } | null;
+      setStatus(payload?.error === "confirm" ? "confirm" : "error");
       return;
     }
     form.reset();
@@ -40,7 +56,10 @@ export function FeedbackForm({ dict }: Props) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="relative space-y-4">
+    <form
+      onSubmit={onSubmit}
+      className="relative space-y-4 [&:not(:has(input[name=confirmed]:checked))_button[type=submit]]:pointer-events-none [&:not(:has(input[name=confirmed]:checked))_button[type=submit]]:opacity-60"
+    >
       <label className="block text-sm text-zinc-400">
         {copy.typeLabel}
         <select required name="type" defaultValue="question" className={fieldClass}>
@@ -73,6 +92,15 @@ export function FeedbackForm({ dict }: Props) {
           className={fieldClass}
         />
       </label>
+      <label className="flex cursor-pointer items-start gap-3 text-sm text-zinc-300">
+        <input
+          required
+          type="checkbox"
+          name="confirmed"
+          className="mt-0.5 size-4 shrink-0 rounded border-white/20 bg-black accent-white"
+        />
+        <span>{copy.confirm}</span>
+      </label>
       <button
         type="submit"
         disabled={status === "sending"}
@@ -82,6 +110,9 @@ export function FeedbackForm({ dict }: Props) {
       </button>
       {status === "ok" ? (
         <p className="text-sm text-zinc-300">{copy.success}</p>
+      ) : null}
+      {status === "confirm" ? (
+        <p className="text-sm text-red-300">{copy.confirmError}</p>
       ) : null}
       {status === "error" ? (
         <p className="text-sm text-red-300">{copy.error}</p>

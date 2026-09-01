@@ -49,107 +49,26 @@ body {
 }
 
 .app-preview-shell {
-  container-type: inline-size;
-  aspect-ratio: 920 / 620;
-}
-
-.app-preview-shell .app-preview {
-  width: var(--preview-width);
-  height: var(--preview-height);
-  transform: scale(calc(100cqi / var(--preview-width)));
-  transform-origin: top left;
+  margin: 0;
 }
 
 .app-preview {
-  --preview-width: 920px;
-  --preview-height: 620px;
-  --preview-background: #f4f6f8;
-  --preview-foreground: #1a2332;
-  --preview-surface: #ffffff;
-  --preview-sidebar: #e8edf2;
-  --preview-muted: #5b6b7c;
-  --preview-border: #d5dde5;
-  --preview-primary: #0f9d8a;
-  --preview-primary-foreground: #ffffff;
-  --preview-status-received: #4f8cff;
-  --preview-status-diagnosis: #7c6cf5;
-  --preview-status-waiting-customer: #e5a819;
-  --preview-status-waiting-part: #e87a2f;
-  --preview-status-in-repair: #2aa8d4;
-  --preview-status-ready: #2db36b;
-  --preview-status-awaiting-pickup: #0f9d8a;
-  --preview-chrome: #eceff2;
-  --preview-chrome-text: #5b6b7c;
-  --preview-dot-red: #ff5f57;
-  --preview-dot-yellow: #febc2e;
-  --preview-dot-green: #28c840;
-  color: var(--preview-foreground);
-  color-scheme: light;
+  position: relative;
+  aspect-ratio: 1024 / 842;
 }
 
-@media (prefers-color-scheme: dark) {
-  .app-preview:not([data-theme="light"]) {
-    --preview-background: #121417;
-    --preview-foreground: #e8eef4;
-    --preview-surface: #1c2128;
-    --preview-sidebar: #0e1013;
-    --preview-muted: #9aa8b5;
-    --preview-border: #2a323c;
-    --preview-primary: #2ee6c5;
-    --preview-primary-foreground: #0a1614;
-    --preview-status-received: #7aa6ff;
-    --preview-status-diagnosis: #a597ff;
-    --preview-status-waiting-customer: #f5c44d;
-    --preview-status-waiting-part: #ff8f4d;
-    --preview-status-in-repair: #5cc8f0;
-    --preview-status-ready: #4ee090;
-    --preview-status-awaiting-pickup: #2ee6c5;
-    --preview-chrome: #16191d;
-    --preview-chrome-text: #9aa8b5;
-    color-scheme: dark;
-  }
+.app-preview .preview-shot {
+  object-fit: cover;
+  pointer-events: none;
+  transition: opacity 180ms ease;
 }
 
-.app-preview[data-theme="dark"] {
-  --preview-background: #121417;
-  --preview-foreground: #e8eef4;
-  --preview-surface: #1c2128;
-  --preview-sidebar: #0e1013;
-  --preview-muted: #9aa8b5;
-  --preview-border: #2a323c;
-  --preview-primary: #2ee6c5;
-  --preview-primary-foreground: #0a1614;
-  --preview-status-received: #7aa6ff;
-  --preview-status-diagnosis: #a597ff;
-  --preview-status-waiting-customer: #f5c44d;
-  --preview-status-waiting-part: #ff8f4d;
-  --preview-status-in-repair: #5cc8f0;
-  --preview-status-ready: #4ee090;
-  --preview-status-awaiting-pickup: #2ee6c5;
-  --preview-chrome: #16191d;
-  --preview-chrome-text: #9aa8b5;
-  color-scheme: dark;
+.app-preview .preview-shot-dark {
+  opacity: 0;
 }
 
-.app-preview[data-theme="light"] {
-  --preview-background: #f4f6f8;
-  --preview-foreground: #1a2332;
-  --preview-surface: #ffffff;
-  --preview-sidebar: #e8edf2;
-  --preview-muted: #5b6b7c;
-  --preview-border: #d5dde5;
-  --preview-primary: #0f9d8a;
-  --preview-primary-foreground: #ffffff;
-  --preview-status-received: #4f8cff;
-  --preview-status-diagnosis: #7c6cf5;
-  --preview-status-waiting-customer: #e5a819;
-  --preview-status-waiting-part: #e87a2f;
-  --preview-status-in-repair: #2aa8d4;
-  --preview-status-ready: #2db36b;
-  --preview-status-awaiting-pickup: #0f9d8a;
-  --preview-chrome: #eceff2;
-  --preview-chrome-text: #5b6b7c;
-  color-scheme: light;
+.app-preview .preview-shot-light {
+  opacity: 1;
 }
 
 .app-preview .preview-icon-sun {
@@ -161,6 +80,14 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
+  .app-preview:not([data-theme="light"]) .preview-shot-dark {
+    opacity: 1;
+  }
+
+  .app-preview:not([data-theme="light"]) .preview-shot-light {
+    opacity: 0;
+  }
+
   .app-preview:not([data-theme="light"]) .preview-icon-sun {
     display: block;
   }
@@ -170,12 +97,28 @@ body {
   }
 }
 
+.app-preview[data-theme="dark"] .preview-shot-dark {
+  opacity: 1;
+}
+
+.app-preview[data-theme="dark"] .preview-shot-light {
+  opacity: 0;
+}
+
 .app-preview[data-theme="dark"] .preview-icon-sun {
   display: block;
 }
 
 .app-preview[data-theme="dark"] .preview-icon-moon {
   display: none;
+}
+
+.app-preview[data-theme="light"] .preview-shot-light {
+  opacity: 1;
+}
+
+.app-preview[data-theme="light"] .preview-shot-dark {
+  opacity: 0;
 }
 
 .app-preview[data-theme="light"] .preview-icon-sun {
