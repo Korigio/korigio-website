@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Cookie-based locale must be resolved per request. This also keeps every
+// route (including /download GitHub lookups) live in the Docker image.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: {
     default: "Korigio — Offline workshop repair manager",
