@@ -23,7 +23,7 @@ export function buildSiteJsonLd() {
         name: APP_NAME,
         url: SITE_URL,
         email: CONTACT_EMAIL,
-        logo: `${SITE_URL}/brand/mark.png`,
+        logo: `${SITE_URL}/brand/logo.png`,
         founder: { "@id": personId },
         contactPoint: {
           "@type": "ContactPoint",

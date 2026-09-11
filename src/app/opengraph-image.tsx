@@ -14,8 +14,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
-  const markBytes = await readFile(join(process.cwd(), "public/brand/mark.png"));
-  const markSrc = `data:image/jpeg;base64,${markBytes.toString("base64")}`;
+  // Use the official brand logo from public/brand (assets).
+  const logoBytes = await readFile(join(process.cwd(), "public/brand/logo.png"));
+  const logoSrc = `data:image/png;base64,${logoBytes.toString("base64")}`;
 
   return new ImageResponse(
     (
@@ -34,11 +35,11 @@ export default async function Image() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <img
-            src={markSrc}
-            width={72}
-            height={72}
+            src={logoSrc}
+            width={80}
+            height={80}
             alt=""
-            style={{ borderRadius: 16 }}
+            style={{ borderRadius: 18 }}
           />
           <div
             style={{
