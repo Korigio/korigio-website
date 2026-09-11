@@ -11,7 +11,7 @@ export default async function HomePage() {
   return (
     <>
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-16 sm:pt-24">
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-10">
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-subtle">
               {dict.hero.kicker}
