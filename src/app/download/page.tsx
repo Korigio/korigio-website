@@ -5,7 +5,12 @@ import { getDictionary, getLocale } from "@/lib/i18n";
 import { getVisitorDesktopOs } from "@/lib/visitor-os";
 import { getLatestRelease } from "@/lib/releases";
 
-export const metadata: Metadata = { title: "Download" };
+export const metadata: Metadata = {
+  title: "Download",
+  description:
+    "Download Korigio free for Windows, macOS, or Linux. Offline installer — no account required.",
+  alternates: { canonical: "/download" },
+};
 
 export default async function DownloadPage() {
   const dict = getDictionary(await getLocale());

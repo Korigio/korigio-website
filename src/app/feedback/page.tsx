@@ -3,7 +3,12 @@ import { FeedbackForm } from "@/components/forms/FeedbackForm";
 import { issueFeedbackTicket } from "@/lib/feedback-ticket";
 import { getDictionary, getLocale } from "@/lib/i18n";
 
-export const metadata: Metadata = { title: "Feedback" };
+export const metadata: Metadata = {
+  title: "Feedback",
+  description:
+    "Report a bug, request a feature, or ask a question about Korigio. Contact: info@korigio.com",
+  alternates: { canonical: "/feedback" },
+};
 
 export default async function FeedbackPage() {
   const dict = getDictionary(await getLocale());
