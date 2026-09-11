@@ -1,7 +1,13 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { APP_NAME, APP_TAGLINE, AUTHOR, SITE_DOMAIN } from "@/lib/constants";
+import {
+  APP_NAME,
+  APP_TAGLINE,
+  AUTHOR,
+  CONTACT_EMAIL,
+  SITE_DOMAIN,
+} from "@/lib/constants";
 
 export const alt = `${APP_NAME} — ${APP_TAGLINE}`;
 export const size = { width: 1200, height: 630 };
@@ -76,11 +82,15 @@ export default async function Image() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            fontSize: 24,
+            fontSize: 22,
             color: "#6b7a8a",
           }}
         >
-          <div style={{ display: "flex" }}>{AUTHOR}</div>
+          <div style={{ display: "flex", gap: 16 }}>
+            <span>{AUTHOR}</span>
+            <span>·</span>
+            <span>{CONTACT_EMAIL}</span>
+          </div>
           <div style={{ display: "flex", fontWeight: 500, color: "#1a2332" }}>
             {SITE_DOMAIN}
           </div>
