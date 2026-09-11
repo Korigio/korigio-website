@@ -28,22 +28,27 @@ function isWindowsGuide(copy: PlatformCopy): copy is WindowsCopy {
   return "clicks" in copy;
 }
 
+function readHashOs(): DesktopOs | null {
+  if (typeof window === "undefined") return null;
+  const hash = window.location.hash.replace("#", "");
+  if (hash === "windows" || hash === "macos" || hash === "linux") return hash;
+  return null;
+}
+
 export function DownloadCards({ cards, detected, dict }: Props) {
   const os = useVisitorOs(detected);
   const featured = os ? (cards.find((card) => card.id === os) ?? null) : null;
   const rest = featured ? cards.filter((card) => card.id !== os) : cards;
   const ordered = featured ? [featured, ...rest] : rest;
-  const [openId, setOpenId] = useState<DesktopOs | null>(featured?.id ?? null);
+  const [openId, setOpenId] = useState<DesktopOs | null>(
+    () => readHashOs() ?? featured?.id ?? null,
+  );
 
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    if (hash === "windows" || hash === "macos" || hash === "linux") {
-      setOpenId(hash);
-      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
-    }
-    if (featured?.id) setOpenId(featured.id);
-  }, [featured?.id]);
+    const hash = readHashOs();
+    if (!hash) return;
+    document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
 
   return (
     <div
@@ -109,14 +114,15 @@ export function DownloadCards({ cards, detected, dict }: Props) {
               )}
             </div>
 
-            <div className="mt-5 border-t border-border pt-4">
-              <button
-                type="button"
-                aria-expanded={isOpen}
-                aria-controls={`install-${card.id}`}
-                onClick={() => setOpenId(isOpen ? null : card.id)}
-                className="flex w-full items-center justify-between gap-3 text-left text-sm text-muted transition-colors hover:text-foreground"
-              >
+            <details
+              className="group mt-5 border-t border-border pt-4"
+              open={isOpen}
+              onToggle={(event) => {
+                const nextOpen = event.currentTarget.open;
+                setOpenId(nextOpen ? card.id : openId === card.id ? null : openId);
+              }}
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm text-muted transition-colors hover:text-foreground [&::-webkit-details-marker]:hidden">
                 <span>{dict.download.howToInstall}</span>
                 <ChevronDown
                   size={16}
@@ -126,14 +132,9 @@ export function DownloadCards({ cards, detected, dict }: Props) {
                   )}
                   aria-hidden
                 />
-              </button>
+              </summary>
 
-              <div
-                id={`install-${card.id}`}
-                role="region"
-                hidden={!isOpen}
-                className={cn(isOpen ? "mt-4" : "hidden")}
-              >
+              <div className="mt-4">
                 <p className="text-sm leading-6 text-muted">{guide.intro}</p>
 
                 {windows ? (
@@ -180,7 +181,7 @@ export function DownloadCards({ cards, detected, dict }: Props) {
                   ))}
                 </ol>
               </div>
-            </div>
+            </details>
           </article>
         );
       })}
