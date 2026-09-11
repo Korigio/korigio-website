@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { DownloadCards } from "@/components/download/DownloadCards";
 import { Requirements } from "@/components/download/Requirements";
 import { getDictionary, getLocale } from "@/lib/i18n";
@@ -55,10 +54,7 @@ export default async function DownloadPage() {
       ) : null}
       <DownloadCards cards={cards} detected={detected} dict={dict} />
       <p className="mt-8 max-w-2xl text-sm text-warning-muted">
-        {dict.download.windowsCallout}{" "}
-        <Link href="/install#windows" className="text-warning underline-offset-4 hover:underline">
-          {dict.download.guide}
-        </Link>
+        {dict.download.windowsCallout}
       </p>
       <p className="mt-4 max-w-2xl text-sm text-subtle">{status}</p>
       <p className="mt-4 max-w-2xl text-sm text-subtle">{dict.download.freeNote}</p>

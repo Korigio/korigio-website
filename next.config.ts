@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.dirname(fileURLToPath(import.meta.url)),
   },
+  async redirects() {
+    return [
+      { source: "/about", destination: "/", permanent: true },
+      { source: "/install", destination: "/download", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

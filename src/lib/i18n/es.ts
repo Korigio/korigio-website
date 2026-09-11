@@ -7,8 +7,6 @@ export const es = {
   nav: {
     features: "Funciones",
     download: "Descargar",
-    install: "Instalar",
-    about: "Acerca de",
     feedback: "Comentarios",
     getFree: "Descárgalo gratis",
     menu: "Menú",
@@ -121,10 +119,11 @@ export const es = {
     kicker: "Instaladores",
     title: "Descargar Korigio",
     subtitle:
-      "Windows es el destino soportado para talleres. Después de descargar, sigue la guía de instalación — Windows mostrará una advertencia de SmartScreen porque el instalador aún no está firmado.",
+      "Windows es el destino soportado para talleres. Descarga tu sistema y abre Cómo instalar en esa tarjeta — Windows mostrará una advertencia de SmartScreen porque el instalador aún no está firmado.",
     guide: "Guía de instalación",
+    howToInstall: "Cómo instalar",
     windowsCallout:
-      "Windows dirá que ha protegido el PC. Pulsa Más información y luego Ejecutar de todas formas — consulta la guía.",
+      "Windows dirá que ha protegido el PC. Abre Cómo instalar en la tarjeta de Windows — pulsa Más información y luego Ejecutar de todas formas.",
     windows: "Windows",
     windowsHint: "10 / 11 · instalador x64",
     macos: "macOS",
@@ -182,11 +181,6 @@ export const es = {
     },
   },
   install: {
-    kicker: "Configuración",
-    title: "Cómo instalar Korigio",
-    subtitle:
-      "macOS y Linux se instalan como builds oficiales y firmadas. En Windows hay que pasar SmartScreen — todavía no tenemos un certificado de firma de Microsoft.",
-    downloadCta: "Descargar Korigio",
     recommended: "Para este equipo",
     windows: {
       title: "Windows 10 / 11",
@@ -208,7 +202,7 @@ export const es = {
       steps: [
         {
           title: "Descarga el instalador",
-          body: "Usa el botón de Windows en la página de descarga y guarda el archivo en este PC.",
+          body: "Usa el botón Descargar de arriba y guarda el archivo en este PC.",
         },
         {
           title: "Abre el instalador",
@@ -235,7 +229,7 @@ export const es = {
       steps: [
         {
           title: "Descarga la imagen de disco",
-          body: "Usa el botón de macOS en la página de descarga (.dmg).",
+          body: "Usa el botón Descargar de arriba para obtener el .dmg.",
         },
         {
           title: "Abre la imagen",
@@ -258,7 +252,7 @@ export const es = {
       steps: [
         {
           title: "Descarga el AppImage",
-          body: "Usa el botón de Linux en la página de descarga.",
+          body: "Usa el botón Descargar de arriba.",
         },
         {
           title: "Hazlo ejecutable",
@@ -270,26 +264,6 @@ export const es = {
         },
       ],
     },
-  },
-  about: {
-    kicker: "Acerca de",
-    title: "Hecho para el banco, no para un panel en la nube.",
-    body: "Korigio es una app de escritorio Windows para talleres pequeños. Mantiene clientes, dispositivos e historial en el PC del mostrador.",
-    author: "Creado por Moritz Alexander Wright.",
-    points: [
-      {
-        title: "Offline primero",
-        body: "Las funciones principales no dependen de un servidor. Si cae la WAN, la recepción sigue.",
-      },
-      {
-        title: "Tamaño de taller",
-        body: "Pensado para PCs Windows 10/11 x64 con RAM modesta — el equipo del mostrador, no una workstation.",
-      },
-      {
-        title: "Privado por defecto",
-        body: "Sin sync en la nube de fichas de clientes. Copias locales que controlas. El equipo se sincroniza en tu Wi-Fi.",
-      },
-    ],
   },
   feedback: {
     kicker: "Comentarios",
