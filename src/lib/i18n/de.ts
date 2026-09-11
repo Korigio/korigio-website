@@ -1,8 +1,8 @@
 export const de = {
   meta: {
-    title: "Korigio — Offline-Werkstattverwaltung",
+    title: "Korigio — Open-Source-Werkstattverwaltung",
     description:
-      "Korigio ist eine Offline-Desktop-App für Werkstätten: Kunden, Geräte, Reparaturen, Diagnose, Druck und lokales WLAN-Teamsync. Keine Cloud.",
+      "Korigio ist freie Open-Source-Desktop-Software für Werkstätten: Kunden, Geräte, Reparaturen, Diagnose, Druck und lokales WLAN-Teamsync. Läuft auf dem Tresen-PC — keine Cloud nötig.",
   },
   nav: {
     features: "Funktionen",
@@ -14,10 +14,10 @@ export const de = {
     themeToDark: "Dunkle Darstellung zeigen",
   },
   hero: {
-    kicker: "Kostenlos · für unabhängige Werkstätten",
-    title: "Die Werkstatt, auch ohne Netz.",
+    kicker: "Open Source · für unabhängige Werkstätten",
+    title: "Die Werkstatt, Open Source.",
     subtitle:
-      "Kunden, Geräte, Reparaturen, Diagnose, Druck und WLAN-Teamsync — am Tresen-PC. Kostenlos, Ihre Daten bleiben lokal. Kein Konto, keine Cloud, kein Abo.",
+      "Kunden, Geräte, Reparaturen, Diagnose, Druck und WLAN-Teamsync — am Tresen-PC. Frei und Open Source. Ihre Daten bleiben lokal. Kein Konto, keine Cloud, kein Abo.",
     primary: "Kostenlos für {os} laden",
     secondary: "Funktionen ansehen",
     languages: "English, Español, Deutsch",
@@ -28,15 +28,15 @@ export const de = {
     },
   },
   stats: [
-    { value: "Gratis", label: "Kein Abo" },
+    { value: "OSS", label: "Frei & Open Source" },
     { value: "0", label: "Konten nötig" },
-    { value: "Lokal", label: "Ihre Daten bleiben" },
+    { value: "Lokal", label: "Sie betreiben es selbst" },
   ],
   features: {
     kicker: "Für den Tresen gebaut",
-    title: "Was eine kleine Werkstatt braucht. Nichts darüber hinaus.",
+    title: "Was eine Reparaturwerkstatt braucht. Nichts darüber hinaus.",
     subtitle:
-      "Korigio ist eine Windows-Desktop-App. Daten bleiben auf dem PC — SQLite, Fotos, Backups — damit der Laden läuft, wenn das Internet nicht.",
+      "Korigio ist Open-Source-Desktop-Software für Windows. Daten bleiben auf dem PC — SQLite, Fotos, Backups — damit der Laden läuft, wenn das Internet nicht.",
     items: [
       {
         title: "Kunden & Firmen",
@@ -109,7 +109,7 @@ export const de = {
         "Das Linux-AppImage ist ein offizieller Build. Als ausführbar markieren und starten. Die Werkstattdaten bleiben auf diesem Rechner — nie in der Cloud.",
     },
     points: [
-      "Kostenlos — kein Konto, kein Abo",
+      "Frei und Open Source — kein Konto, kein Abo",
       "Keine CDN-Schriften oder APIs für Kernfunktionen",
       "SQLite auf dem lokalen Rechner",
       "Teamsync nur im lokalen WLAN",
@@ -137,7 +137,7 @@ export const de = {
       "Installer erscheinen hier aus dem öffentlichen GitHub-Release. Windows bleibt der Werkstatt-Installer.",
     statusReady: "Aktuelle Version {version}. Betriebssystem wählen.",
     freeNote:
-      "Korigio ist kostenlos zum Laden und Nutzen. Kein Konto, kein Abo — installieren, und die Werkstattdaten bleiben auf dem PC.",
+      "Korigio ist frei und Open Source. Kein Konto, kein Abo — installieren, und die Werkstattdaten bleiben auf dem PC.",
     requirements: {
       kicker: "Hardware",
       title: "Mindestanforderungen",
@@ -269,7 +269,7 @@ export const de = {
     kicker: "Feedback",
     title: "Fehler melden, Funktion wünschen oder Frage stellen.",
     subtitle:
-      "Korigio ist kostenlos und für echte Werkstätten gebaut. Sagen Sie uns, was klemmt, was fehlt oder was Sie wissen möchten — wir lesen jede Nachricht.",
+      "Korigio ist frei, Open Source und für echte Werkstätten gebaut. Sagen Sie uns, was klemmt, was fehlt oder was Sie wissen möchten — wir lesen jede Nachricht.",
     typeLabel: "Worum geht es?",
     types: {
       bug: "Fehler melden",
@@ -291,7 +291,7 @@ export const de = {
     product: "Produkt",
     company: "Unternehmen",
     legal: "Alle Rechte vorbehalten.",
-    tagline: "Offline-Werkstattverwaltung.",
+    tagline: "Open-Source-Werkstattverwaltung.",
   },
   preview: {
     alt: "Korigio-Werkstattdashboard",

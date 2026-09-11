@@ -1,8 +1,8 @@
 export const en = {
   meta: {
-    title: "Korigio — Offline workshop repair manager",
+    title: "Korigio — Open-source workshop repair manager",
     description:
-      "Korigio is an offline-first desktop app for repair shops: customers, devices, repairs, diagnosis, print, and local Wi-Fi team sync. No cloud required.",
+      "Korigio is free and open-source desktop software for repair shops: customers, devices, repairs, diagnosis, print, and local Wi-Fi team sync. Run it on your counter PC — no cloud required.",
   },
   nav: {
     features: "Features",
@@ -14,10 +14,10 @@ export const en = {
     themeToDark: "Show dark appearance",
   },
   hero: {
-    kicker: "Free · for independent repair shops",
-    title: "The workshop, running offline.",
+    kicker: "Open source · for independent repair shops",
+    title: "The workshop, open source.",
     subtitle:
-      "Customers, devices, repairs, diagnosis, print, and Wi-Fi team sync — on the counter PC. Free to download, your data stays local. No account, no cloud, no subscription.",
+      "Customers, devices, repairs, diagnosis, print, and Wi-Fi team sync — on the counter PC. Free and open source. Your data stays local. No account, no cloud, no subscription.",
     primary: "Download free for {os}",
     secondary: "See features",
     languages: "English, Español, Deutsch",
@@ -28,15 +28,15 @@ export const en = {
     },
   },
   stats: [
-    { value: "Free", label: "No subscription" },
+    { value: "OSS", label: "Free & open source" },
     { value: "0", label: "Accounts needed" },
-    { value: "Local", label: "Your data stays put" },
+    { value: "Local", label: "You run it yourself" },
   ],
   features: {
     kicker: "Built for the counter",
-    title: "Everything a small shop needs. Nothing it doesn’t.",
+    title: "Everything a repair shop needs. Nothing it doesn’t.",
     subtitle:
-      "Korigio is a Windows desktop app. Data stays on the PC — SQLite, photos, backups — so the shop keeps working when the internet does not.",
+      "Korigio is open-source desktop software for Windows. Data stays on the PC — SQLite, photos, backups — so the workshop keeps working when the internet does not.",
     items: [
       {
         title: "Customers & companies",
@@ -109,7 +109,7 @@ export const en = {
         "The Linux AppImage is an official build. Mark it executable, then run it. Workshop data stays on this machine — never in the cloud.",
     },
     points: [
-      "Free to use — no account, no subscription",
+      "Free and open source — no account, no subscription",
       "No CDN fonts or APIs for core features",
       "SQLite on the local machine",
       "Team sync only on the local Wi-Fi",
@@ -137,7 +137,7 @@ export const en = {
       "Installers appear here from the public GitHub release. Windows remains the supported shop installer.",
     statusReady: "Latest release {version}. Choose your operating system.",
     freeNote:
-      "Korigio is free to download and use. No account, no subscription — install it and your workshop data stays on the PC.",
+      "Korigio is free and open source. No account, no subscription — install it and your workshop data stays on the PC.",
     requirements: {
       kicker: "Hardware",
       title: "Minimum requirements",
@@ -269,7 +269,7 @@ export const en = {
     kicker: "Feedback",
     title: "Report a bug, request a feature, or ask a question.",
     subtitle:
-      "Korigio is free and built for real workshops. Tell us what is broken, what is missing, or what you want to know — we read every message.",
+      "Korigio is free, open source, and built for real workshops. Tell us what is broken, what is missing, or what you want to know — we read every message.",
     typeLabel: "What is this about?",
     types: {
       bug: "Report a bug",
@@ -291,7 +291,7 @@ export const en = {
     product: "Product",
     company: "Company",
     legal: "All rights reserved.",
-    tagline: "Offline workshop repair manager.",
+    tagline: "Open-source workshop repair manager.",
   },
   preview: {
     alt: "Korigio workshop dashboard",

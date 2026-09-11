@@ -216,6 +216,10 @@ body {
   html:not([data-theme="light"]) .theme-icon-moon {
     display: none;
   }
+
+  html:not([data-theme="light"]) .brand-mark {
+    filter: invert(1);
+  }
 }
 
 html[data-theme="dark"] .preview-shot-dark {
@@ -232,6 +236,10 @@ html[data-theme="dark"] .theme-icon-sun {
 
 html[data-theme="dark"] .theme-icon-moon {
   display: none;
+}
+
+html[data-theme="dark"] .brand-mark {
+  filter: invert(1);
 }
 
 html[data-theme="light"] .preview-shot-light {

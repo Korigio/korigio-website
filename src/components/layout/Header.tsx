@@ -38,16 +38,16 @@ export function Header({ dict, locale }: Props) {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-header backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
-        <Link href="/" className="flex items-center gap-0" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <Image
             src="/brand/mark.png"
             alt="Korigio"
             width={36}
             height={36}
-            className="h-9 w-9 shrink-0 rounded-xl object-contain"
+            className="brand-mark h-9 w-9 shrink-0 rounded-xl object-contain"
             priority
           />
-          <span className="-ml-0.5 text-[17px] font-medium tracking-tight text-foreground">
+          <span className="text-[17px] font-medium tracking-tight text-foreground">
             korigio
           </span>
         </Link>

@@ -1,8 +1,8 @@
 export const es = {
   meta: {
-    title: "Korigio — Gestor de taller offline",
+    title: "Korigio — Gestor de taller de código abierto",
     description:
-      "Korigio es una app de escritorio offline para talleres: clientes, dispositivos, reparaciones, diagnóstico, impresión y sincronización Wi-Fi local. Sin nube.",
+      "Korigio es software de escritorio libre y de código abierto para talleres: clientes, dispositivos, reparaciones, diagnóstico, impresión y sincronización Wi-Fi local. En el PC del mostrador — sin nube.",
   },
   nav: {
     features: "Funciones",
@@ -14,10 +14,10 @@ export const es = {
     themeToDark: "Mostrar modo oscuro",
   },
   hero: {
-    kicker: "Gratis · para talleres independientes",
-    title: "El taller, funcionando sin red.",
+    kicker: "Código abierto · para talleres independientes",
+    title: "El taller, de código abierto.",
     subtitle:
-      "Clientes, dispositivos, reparaciones, diagnóstico, impresión y sync por Wi-Fi — en el PC del mostrador. Gratis, con tus datos en local. Sin cuenta, sin nube y sin suscripción.",
+      "Clientes, dispositivos, reparaciones, diagnóstico, impresión y sync por Wi-Fi — en el PC del mostrador. Libre y de código abierto. Tus datos se quedan en local. Sin cuenta, sin nube y sin suscripción.",
     primary: "Descargar gratis para {os}",
     secondary: "Ver funciones",
     languages: "English, Español, Deutsch",
@@ -28,15 +28,15 @@ export const es = {
     },
   },
   stats: [
-    { value: "Gratis", label: "Sin suscripción" },
+    { value: "OSS", label: "Libre y código abierto" },
     { value: "0", label: "Cuentas necesarias" },
-    { value: "Local", label: "Tus datos se quedan" },
+    { value: "Local", label: "Lo ejecutas tú" },
   ],
   features: {
     kicker: "Hecho para el mostrador",
-    title: "Lo que un taller pequeño necesita. Nada más.",
+    title: "Lo que un taller de reparación necesita. Nada más.",
     subtitle:
-      "Korigio es una app de escritorio para Windows. Los datos se quedan en el PC — SQLite, fotos, copias — para que el taller siga si se cae internet.",
+      "Korigio es software de escritorio de código abierto para Windows. Los datos se quedan en el PC — SQLite, fotos, copias — para que el taller siga si se cae internet.",
     items: [
       {
         title: "Clientes y empresas",
@@ -109,7 +109,7 @@ export const es = {
         "El AppImage de Linux es una build oficial. Márcalo como ejecutable y ábrelo. Los datos del taller se quedan en esta máquina — nunca en la nube.",
     },
     points: [
-      "Gratis — sin cuenta ni suscripción",
+      "Libre y de código abierto — sin cuenta ni suscripción",
       "Sin fuentes ni APIs CDN para lo esencial",
       "SQLite en la máquina local",
       "Sync de equipo solo en el Wi-Fi local",
@@ -137,7 +137,7 @@ export const es = {
       "Los instaladores aparecen aquí desde la release pública de GitHub. Windows sigue siendo el instalador de taller.",
     statusReady: "Última versión {version}. Elige el sistema operativo.",
     freeNote:
-      "Korigio es gratis de descargar y usar. Sin cuenta ni suscripción — instálalo y los datos del taller se quedan en el PC.",
+      "Korigio es libre y de código abierto. Sin cuenta ni suscripción — instálalo y los datos del taller se quedan en el PC.",
     requirements: {
       kicker: "Hardware",
       title: "Requisitos mínimos",
@@ -269,7 +269,7 @@ export const es = {
     kicker: "Comentarios",
     title: "Informa de un error, pide una función o haz una pregunta.",
     subtitle:
-      "Korigio es gratis y está hecho para talleres reales. Cuéntanos qué falla, qué falta o qué quieres saber — leemos cada mensaje.",
+      "Korigio es libre, de código abierto y está hecho para talleres reales. Cuéntanos qué falla, qué falta o qué quieres saber — leemos cada mensaje.",
     typeLabel: "¿De qué se trata?",
     types: {
       bug: "Informar de un error",
@@ -291,7 +291,7 @@ export const es = {
     product: "Producto",
     company: "Empresa",
     legal: "Todos los derechos reservados.",
-    tagline: "Gestor de taller offline.",
+    tagline: "Gestor de taller de código abierto.",
   },
   preview: {
     alt: "Panel de taller de Korigio",
