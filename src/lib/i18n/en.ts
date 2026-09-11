@@ -1,6 +1,6 @@
 export const en = {
   meta: {
-    title: "Korigio — Open-source workshop repair manager",
+    title: "Korigio — Open source repair manager",
     description:
       "Korigio is free and open-source desktop software for repair shops: customers, devices, repairs, diagnosis, print, and local Wi-Fi team sync. Run it on your counter PC — no cloud required.",
   },
@@ -291,7 +291,7 @@ export const en = {
     product: "Product",
     company: "Company",
     legal: "All rights reserved.",
-    tagline: "Open-source workshop repair manager.",
+    tagline: "Open source repair manager.",
   },
   preview: {
     alt: "Korigio workshop dashboard",

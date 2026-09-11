@@ -1,6 +1,6 @@
 export const es = {
   meta: {
-    title: "Korigio — Gestor de taller de código abierto",
+    title: "Korigio — Gestor de reparaciones de código abierto",
     description:
       "Korigio es software de escritorio libre y de código abierto para talleres: clientes, dispositivos, reparaciones, diagnóstico, impresión y sincronización Wi-Fi local. En el PC del mostrador — sin nube.",
   },
@@ -291,7 +291,7 @@ export const es = {
     product: "Producto",
     company: "Empresa",
     legal: "Todos los derechos reservados.",
-    tagline: "Gestor de taller de código abierto.",
+    tagline: "Gestor de reparaciones de código abierto.",
   },
   preview: {
     alt: "Panel de taller de Korigio",

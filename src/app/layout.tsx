@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Korigio",
     "workshop management",
     "repair shop software",
-    "offline repair manager",
+    "open source repair manager",
     AUTHOR,
     "open source",
   ],

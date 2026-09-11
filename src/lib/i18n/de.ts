@@ -1,6 +1,6 @@
 export const de = {
   meta: {
-    title: "Korigio — Open-Source-Werkstattverwaltung",
+    title: "Korigio — Open-Source-Reparaturmanager",
     description:
       "Korigio ist freie Open-Source-Desktop-Software für Werkstätten: Kunden, Geräte, Reparaturen, Diagnose, Druck und lokales WLAN-Teamsync. Läuft auf dem Tresen-PC — keine Cloud nötig.",
   },
@@ -291,7 +291,7 @@ export const de = {
     product: "Produkt",
     company: "Unternehmen",
     legal: "Alle Rechte vorbehalten.",
-    tagline: "Open-Source-Werkstattverwaltung.",
+    tagline: "Open-Source-Reparaturmanager.",
   },
   preview: {
     alt: "Korigio-Werkstattdashboard",

@@ -1,5 +1,5 @@
 export const APP_NAME = "Korigio";
-export const APP_TAGLINE = "Offline workshop repair manager";
+export const APP_TAGLINE = "Open source repair manager";
 export const AUTHOR = "Moritz Alexander Wright";
 export const CONTACT_EMAIL = "info@korigio.com";
 export const SITE_DOMAIN = "korigio.com";
