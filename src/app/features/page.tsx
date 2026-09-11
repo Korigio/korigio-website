@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { getDictionary, getLocale } from "@/lib/i18n";
 
-export const metadata: Metadata = { title: "Features" };
+export const metadata: Metadata = {
+  title: "Features",
+  description:
+    "Customers, devices, repairs, diagnosis templates, print, backups, and Wi-Fi team sync — everything a repair shop needs in Korigio.",
+  alternates: { canonical: "/features" },
+};
 
 export default async function FeaturesPage() {
   const dict = getDictionary(await getLocale());

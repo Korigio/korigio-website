@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AUTHOR, COPYRIGHT_YEAR } from "@/lib/constants";
+import {
+  AUTHOR,
+  CONTACT_EMAIL,
+  COPYRIGHT_YEAR,
+  SITE_DOMAIN,
+} from "@/lib/constants";
 import type { Dictionary } from "@/lib/i18n";
 
 type Props = {
@@ -51,12 +56,39 @@ export function Footer({ dict }: Props) {
                 {dict.nav.feedback}
               </Link>
             </li>
+            <li>
+              <Link href="/privacy" className="hover:text-foreground">
+                {dict.footer.privacy}
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-foreground">
+                {dict.footer.terms}
+              </Link>
+            </li>
+            <li>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="hover:text-foreground"
+              >
+                {CONTACT_EMAIL}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`https://${SITE_DOMAIN}`}
+                className="hover:text-foreground"
+              >
+                {SITE_DOMAIN}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border">
         <p className="mx-auto max-w-6xl px-5 py-5 text-xs text-faint">
-          Author: {AUTHOR} · Copyright © {COPYRIGHT_YEAR} · {dict.footer.legal}
+          {AUTHOR} · {CONTACT_EMAIL} · {SITE_DOMAIN} · Copyright ©{" "}
+          {COPYRIGHT_YEAR} · {dict.footer.legal}
         </p>
       </div>
     </footer>
