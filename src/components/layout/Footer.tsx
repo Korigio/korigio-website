@@ -12,15 +12,15 @@ export function Footer({ dict }: Props) {
     <footer className="border-t border-border">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link href="/" className="inline-flex items-center gap-2.5">
+          <Link href="/" className="inline-flex items-center gap-0">
             <Image
               src="/brand/mark.png"
               alt="Korigio"
               width={32}
               height={32}
-              className="rounded-lg"
+              className="h-8 w-8 shrink-0 rounded-lg object-contain"
             />
-            <span className="text-lg tracking-tight">korigio</span>
+            <span className="-ml-0.5 text-lg tracking-tight">korigio</span>
           </Link>
           <p className="mt-3 max-w-sm text-sm text-subtle">{dict.footer.tagline}</p>
         </div>
@@ -39,11 +39,6 @@ export function Footer({ dict }: Props) {
                 {dict.nav.download}
               </Link>
             </li>
-            <li>
-              <Link href="/install" className="hover:text-foreground">
-                {dict.nav.install}
-              </Link>
-            </li>
           </ul>
         </div>
         <div>
@@ -51,11 +46,6 @@ export function Footer({ dict }: Props) {
             {dict.footer.company}
           </p>
           <ul className="mt-3 space-y-2 text-sm text-muted">
-            <li>
-              <Link href="/about" className="hover:text-foreground">
-                {dict.nav.about}
-              </Link>
-            </li>
             <li>
               <Link href="/feedback" className="hover:text-foreground">
                 {dict.nav.feedback}

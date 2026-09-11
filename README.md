@@ -24,8 +24,7 @@ Open [http://localhost:3000](http://localhost:3000).
 | --- | --- |
 | `/` | Product landing |
 | `/features` | Workshop features from the desktop app |
-| `/download` | Installers from the public GitHub release |
-| `/about` | Product story |
+| `/download` | Installers and per-OS install steps from the public GitHub release |
 | `/feedback` | Feedback form — report a bug, request a feature, or ask a question (stored in `data/feedback.json`) |
 
 Korigio is free: no accounts, no subscription, and workshop data stays on the local PC. The website only stores submitted feedback in `data/` on disk (gitignored).

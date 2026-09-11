@@ -7,8 +7,6 @@ export const de = {
   nav: {
     features: "Funktionen",
     download: "Download",
-    install: "Installieren",
-    about: "Über uns",
     feedback: "Feedback",
     getFree: "Gratis laden",
     menu: "Menü",
@@ -121,10 +119,11 @@ export const de = {
     kicker: "Installer",
     title: "Korigio herunterladen",
     subtitle:
-      "Windows ist das unterstützte Ziel für Werkstätten. Folgen Sie nach dem Download der Installationsanleitung — Windows zeigt eine SmartScreen-Warnung, weil der Installer noch nicht digital signiert ist.",
+      "Windows ist das unterstützte Ziel für Werkstätten. Laden Sie Ihr System herunter und öffnen Sie Installation in dieser Karte — Windows zeigt eine SmartScreen-Warnung, weil der Installer noch nicht digital signiert ist.",
     guide: "Installationsanleitung",
+    howToInstall: "Installation",
     windowsCallout:
-      "Windows sagt, der PC sei geschützt. Weitere Informationen, dann Trotzdem ausführen — siehe Installationsanleitung.",
+      "Windows sagt, der PC sei geschützt. Öffnen Sie Installation auf der Windows-Karte — Weitere Informationen, dann Trotzdem ausführen.",
     windows: "Windows",
     windowsHint: "10 / 11 · x64 Installer",
     macos: "macOS",
@@ -182,11 +181,6 @@ export const de = {
     },
   },
   install: {
-    kicker: "Einrichtung",
-    title: "Korigio installieren",
-    subtitle:
-      "macOS und Linux installieren als signierte, offizielle Builds. Unter Windows müssen Sie SmartScreen durchklicken — wir haben noch kein Microsoft-Codesigning-Zertifikat.",
-    downloadCta: "Korigio herunterladen",
     recommended: "Für diesen Rechner",
     windows: {
       title: "Windows 10 / 11",
@@ -208,7 +202,7 @@ export const de = {
       steps: [
         {
           title: "Installer herunterladen",
-          body: "Auf der Download-Seite den Windows-Button nutzen und die Datei auf diesem PC speichern.",
+          body: "Den Download-Button oben nutzen und die Datei auf diesem PC speichern.",
         },
         {
           title: "Installer öffnen",
@@ -235,7 +229,7 @@ export const de = {
       steps: [
         {
           title: "Disk-Image herunterladen",
-          body: "Auf der Download-Seite den macOS-Button nutzen (.dmg).",
+          body: "Den Download-Button oben nutzen, um die .dmg zu laden.",
         },
         {
           title: "Image öffnen",
@@ -258,7 +252,7 @@ export const de = {
       steps: [
         {
           title: "AppImage herunterladen",
-          body: "Auf der Download-Seite den Linux-Button nutzen.",
+          body: "Den Download-Button oben nutzen.",
         },
         {
           title: "Ausführbar machen",
@@ -270,26 +264,6 @@ export const de = {
         },
       ],
     },
-  },
-  about: {
-    kicker: "Über uns",
-    title: "Für die Werkbank gebaut, nicht für ein Cloud-Dashboard.",
-    body: "Korigio ist eine Offline-Windows-App für kleine Reparaturwerkstätten. Kunden, Geräte und Auftragshistorie bleiben auf dem Tresen-PC.",
-    author: "Erstellt von Moritz Alexander Wright.",
-    points: [
-      {
-        title: "Offline zuerst",
-        body: "Kernfunktionen hängen nicht an einem Server. Fällt das WAN aus, läuft die Annahme weiter.",
-      },
-      {
-        title: "Werkstattgröße",
-        body: "Für Windows 10/11 x64 mit bescheidenem RAM — typische Tresen-PCs, keine Workstations.",
-      },
-      {
-        title: "Privat by default",
-        body: "Kein Cloud-Sync von Kundendaten. Lokale Backups unter Ihrer Kontrolle. Teamsync im eigenen WLAN.",
-      },
-    ],
   },
   feedback: {
     kicker: "Feedback",

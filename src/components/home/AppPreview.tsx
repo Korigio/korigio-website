@@ -9,21 +9,21 @@ type Props = {
 
 export function AppPreview({ dict }: Props) {
   return (
-    <figure className="m-0">
-      <div className="app-preview glow-ring overflow-hidden rounded-[14px] border border-border">
+    <figure className="m-0 w-full min-w-0">
+      <div className="app-preview glow-ring relative aspect-[1024/840] w-full overflow-hidden rounded-[14px] border border-border">
         <Image
           src={dashboardLight}
           alt=""
-          sizes="(max-width: 1024px) 100vw, 520px"
+          fill
+          sizes="(max-width: 1024px) 100vw, 640px"
           className="preview-shot preview-shot-light"
-          style={{ width: "100%", height: "auto" }}
           priority
         />
         <Image
           src={dashboardDark}
           alt=""
           fill
-          sizes="(max-width: 1024px) 100vw, 520px"
+          sizes="(max-width: 1024px) 100vw, 640px"
           className="preview-shot preview-shot-dark"
           priority
         />
