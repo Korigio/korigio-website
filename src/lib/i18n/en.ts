@@ -292,6 +292,8 @@ export const en = {
     company: "Company",
     legal: "All rights reserved.",
     tagline: "Open source repair manager.",
+    privacy: "Privacy policy",
+    terms: "Terms and conditions",
   },
   preview: {
     alt: "Korigio workshop dashboard",

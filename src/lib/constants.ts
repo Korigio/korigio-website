@@ -8,6 +8,7 @@ export const SITE_URL =
 export const SITE_DESCRIPTION =
   "Korigio is free and open-source desktop software for repair shops: customers, devices, repairs, diagnosis, print, and local Wi-Fi team sync. Run it on your counter PC — no cloud required.";
 export const COPYRIGHT_YEAR = 2026;
+export const LEGAL_EFFECTIVE_DATE = "11 September 2026";
 export const SUPPORTED_OS = "Windows 10 / 11 x64";
 export const GITHUB_RELEASES_REPO =
   process.env.GITHUB_RELEASES_REPO ?? "Korigio/korigio-downloads";

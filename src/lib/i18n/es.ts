@@ -292,6 +292,8 @@ export const es = {
     company: "Empresa",
     legal: "Todos los derechos reservados.",
     tagline: "Gestor de reparaciones de código abierto.",
+    privacy: "Política de privacidad",
+    terms: "Términos y condiciones",
   },
   preview: {
     alt: "Panel de taller de Korigio",

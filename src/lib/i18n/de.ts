@@ -292,6 +292,8 @@ export const de = {
     company: "Unternehmen",
     legal: "Alle Rechte vorbehalten.",
     tagline: "Open-Source-Reparaturmanager.",
+    privacy: "Datenschutzerklärung",
+    terms: "Allgemeine Geschäftsbedingungen",
   },
   preview: {
     alt: "Korigio-Werkstattdashboard",

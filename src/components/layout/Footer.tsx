@@ -57,6 +57,16 @@ export function Footer({ dict }: Props) {
               </Link>
             </li>
             <li>
+              <Link href="/privacy" className="hover:text-foreground">
+                {dict.footer.privacy}
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms" className="hover:text-foreground">
+                {dict.footer.terms}
+              </Link>
+            </li>
+            <li>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="hover:text-foreground"
