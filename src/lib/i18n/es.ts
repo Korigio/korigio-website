@@ -297,6 +297,16 @@ export const es = {
   },
   preview: {
     alt: "Panel de taller de Korigio",
+    galleryKicker: "Producto",
+    galleryTitle: "Hecho para el mostrador de reparaciones.",
+    gallerySubtitle:
+      "Recepción, progreso de reparación, perfiles de empresa y el panel del taller — software de escritorio de código abierto que ejecutas tú.",
+    shots: {
+      intake: "Recepción — entrada rápida de cliente con teclado",
+      repair: "Vista de reparación — estado, progreso y siguientes pasos",
+      company: "Perfil de empresa — para recibos de entrada y trabajos B2B",
+      companies: "Empresas — busca y gestiona cuentas del taller",
+    },
   },
   notFound: {
     title: "Página no encontrada",

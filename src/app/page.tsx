@@ -1,5 +1,6 @@
 import { AppPreview } from "@/components/home/AppPreview";
 import { HomeOfflineCta, HomePlatformCtas } from "@/components/home/HomePlatformCtas";
+import { ProductShots } from "@/components/home/ProductShots";
 import { getDictionary, getLocale } from "@/lib/i18n";
 import { getVisitorDesktopOs } from "@/lib/visitor-os";
 
@@ -38,6 +39,8 @@ export default async function HomePage() {
           ))}
         </dl>
       </section>
+
+      <ProductShots dict={dict} />
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-6xl px-5 py-20">

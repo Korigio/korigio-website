@@ -297,6 +297,16 @@ export const en = {
   },
   preview: {
     alt: "Korigio workshop dashboard",
+    galleryKicker: "Product",
+    galleryTitle: "Built for the repair counter.",
+    gallerySubtitle:
+      "Intake, repair progress, company profiles, and the workshop dashboard — open source desktop software you run yourself.",
+    shots: {
+      intake: "Repair intake — keyboard-first customer entry",
+      repair: "Repair overview — status, progress, and next steps",
+      company: "Company profile — for intake receipts and B2B jobs",
+      companies: "Companies — search and manage workshop accounts",
+    },
   },
   notFound: {
     title: "Page not found",

@@ -297,6 +297,16 @@ export const de = {
   },
   preview: {
     alt: "Korigio-Werkstattdashboard",
+    galleryKicker: "Produkt",
+    galleryTitle: "Für den Reparatur-Tresen gebaut.",
+    gallerySubtitle:
+      "Annahme, Reparaturfortschritt, Firmenprofile und das Werkstatt-Dashboard — Open-Source-Desktop-Software, die Sie selbst betreiben.",
+    shots: {
+      intake: "Reparaturannahme — schnelle Kundeneingabe per Tastatur",
+      repair: "Reparaturübersicht — Status, Fortschritt und nächste Schritte",
+      company: "Firmenprofil — für Annahmescheine und B2B-Aufträge",
+      companies: "Firmen — Werkstattkonten suchen und verwalten",
+    },
   },
   notFound: {
     title: "Seite nicht gefunden",
