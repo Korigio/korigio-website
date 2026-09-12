@@ -10,7 +10,7 @@ type Props = {
 export function AppPreview({ dict }: Props) {
   return (
     <figure className="m-0 w-full min-w-0">
-      <div className="app-preview glow-ring relative aspect-[1024/643] w-full overflow-hidden rounded-[14px] border border-border bg-elevated">
+      <div className="app-preview glow-ring relative aspect-[1024/840] w-full overflow-hidden rounded-[14px] border border-border">
         <Image
           src={dashboardLight}
           alt=""
